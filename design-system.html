@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System — Sara Behbakht</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='12' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(-16 16 12)'/%3E%3Cellipse cx='20.5' cy='12.5' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(16 20.5 12.5)'/%3E%3CclipPath id='bc'%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5'/%3E%3C/clipPath%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='%23f6c445'/%3E%3Cg clip-path='url(%23bc)'%3E%3Crect x='14' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3Crect x='19.5' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3C/g%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='none' stroke='%23211d24' stroke-width='1.1'/%3E%3Ccircle cx='8.3' cy='16.3' r='2.1' fill='%23211d24'/%3E%3Cpath d='M7.2 14.4 L5.8 12.5 M9.2 14.6 L9.4 12.3' stroke='%23211d24' stroke-width='0.9' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='5.8' cy='12.3' r='0.7' fill='%23211d24'/%3E%3Ccircle cx='9.4' cy='12.1' r='0.7' fill='%23211d24'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --font-serif:'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-sans:'Inter', system-ui, -apple-system, sans-serif;
+    --font-hand:'Caveat', 'Bradley Hand', cursive;
+    --bg:#faf6ec; --ink:#211d24;
+    --pink:#ef6f9e; --pink-deep:#df5687; --turq:#3fb8b0;
+    --yellow:#f6c445; --purple:#8b6cd8; --coral:#ef7c5c; --line:#e1d9c9;
+    --o-body:.78; --o-muted:.6; --o-faint:.45;
+    --r-sm:8px; --r-md:14px; --r-pill:999px;
+    --ease:cubic-bezier(.22,.68,.16,1);
+  }
+  *{ box-sizing:border-box; text-transform:none; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--font-sans); font-size:15px; line-height:1.6;
+  }
+  .wrap{ max-width:980px; margin:0 auto; padding:64px 40px 96px; }
+
+  h1{ font-family:var(--font-serif); font-weight:500; font-size:46px; line-height:1.1; margin:0 0 10px; }
+  .lede{ font-family:var(--font-serif); font-style:italic; font-size:20px; opacity:.75; margin:0 0 8px; }
+  .meta{ font-size:13.5px; opacity:var(--o-faint); margin:0 0 56px; }
+
+  h2{
+    font-family:var(--font-serif); font-weight:500; font-size:26px; margin:0 0 6px;
+  }
+  .sec{ padding-top:44px; margin-top:44px; border-top:1px solid var(--line); }
+  .sec:first-of-type{ border-top:none; margin-top:0; padding-top:0; }
+  .sec > p{ opacity:var(--o-body); max-width:62ch; margin:0 0 26px; }
+  .eyebrow{
+    font-size:13px; font-weight:600; letter-spacing:.01em; color:var(--coral);
+    display:block; margin:0 0 14px;
+  }
+
+  .card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--r-md);
+    padding:24px 26px; box-shadow:0 4px 14px rgba(33,29,36,.05);
+  }
+  .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  @media (max-width:760px){ .grid-2,.grid-3{ grid-template-columns:1fr; } }
+
+  .role{ font-size:12.5px; font-weight:600; opacity:var(--o-muted); margin:0 0 10px; }
+  .spec{ font-size:12.5px; opacity:var(--o-faint); margin:10px 0 0; }
+  .samp-serif{ font-family:var(--font-serif); font-size:30px; line-height:1.15; }
+  .samp-sans{ font-family:var(--font-sans); font-size:17px; line-height:1.55; }
+  .samp-hand{ font-family:var(--font-hand); font-size:24px; }
+
+  .sw{ display:flex; flex-direction:column; gap:8px; }
+  .sw-chip{ height:60px; border-radius:var(--r-sm); border:1px solid rgba(33,29,36,.08); }
+  .sw-name{ font-size:12.5px; font-weight:600; }
+  .sw-hex{ font-size:12px; opacity:var(--o-faint); }
+  .sw-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:760px){ .sw-row{ grid-template-columns:repeat(2,1fr); } }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:9px;
+    padding:13px 26px; border-radius:var(--r-pill);
+    font-family:var(--font-sans); font-size:13.5px; font-weight:600;
+    letter-spacing:.01em; line-height:1; text-decoration:none;
+    border:1.5px solid var(--ink); background:transparent; color:var(--ink);
+    transition:transform .2s var(--ease), box-shadow .2s var(--ease),
+               background-color .2s var(--ease), border-color .2s var(--ease);
+    cursor:pointer;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 18px rgba(33,29,36,.13); }
+  .btn--solid{ background:var(--pink); border-color:var(--pink); color:#fff; }
+  .btn--solid:hover{ background:var(--pink-deep); border-color:var(--pink-deep);
+    box-shadow:0 8px 20px rgba(239,111,158,.34); }
+  .link-arrow{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:13.5px; font-weight:600; letter-spacing:.01em;
+    color:var(--ink); text-decoration:none; opacity:var(--o-muted);
+    transition:opacity .2s var(--ease);
+  }
+  .link-arrow:hover{ opacity:1; }
+  .arrow-glyph{ font-family:var(--font-sans); font-size:1em; display:inline-block;
+    transition:transform .2s var(--ease); }
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+
+  .arrow-tbl{ width:100%; border-collapse:collapse; font-size:14px; }
+  .arrow-tbl th, .arrow-tbl td{ text-align:left; padding:11px 12px; border-bottom:1px solid var(--line); }
+  .arrow-tbl th{ font-size:12.5px; font-weight:600; opacity:var(--o-muted); }
+  .arrow-tbl td:first-child{ font-size:20px; width:58px; }
+  .arrow-tbl tr:last-child td{ border-bottom:none; }
+
+  .rules{ margin:0; padding:0; list-style:none; }
+  .rules li{
+    padding:13px 0 13px 30px; border-bottom:1px solid var(--line);
+    position:relative; opacity:var(--o-body);
+  }
+  .rules li:last-child{ border-bottom:none; }
+  .rules li::before{
+    content:''; position:absolute; left:6px; top:21px;
+    width:7px; height:7px; border-radius:50%; background:var(--turq);
+  }
+  .rules li.no::before{ background:var(--coral); }
+  .rules b{ opacity:1; }
+
+  .scale-row{ display:flex; align-items:flex-end; gap:10px; flex-wrap:wrap; }
+  .scale-item{ text-align:center; }
+  .scale-bar{ background:var(--purple); opacity:.5; border-radius:3px 3px 0 0; width:34px; }
+  .scale-lbl{ font-size:11.5px; opacity:var(--o-faint); margin-top:5px; }
+
+  code{
+    font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size:12.5px; background:rgba(33,29,36,.06);
+    padding:2px 6px; border-radius:4px;
+  }
+  footer{ margin-top:64px; font-size:13px; opacity:var(--o-faint); text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="eyebrow">Design system</span>
+  <h1>Sara Behbakht — portfolio</h1>
+  <p class="lede">Three typefaces, one arrow set, one button.</p>
+  <p class="meta">Applies to every page: home · about · resume · four project case studies.</p>
+
+  <!-- TYPE -->
+  <div class="sec">
+    <h2>Typography</h2>
+    <p>Three families, each with one job. Nothing else gets loaded or used.</p>
+    <div class="grid-3">
+      <div class="card">
+        <p class="role">Serif — display</p>
+        <div class="samp-serif">Hey, welcome<br>to my portfolio</div>
+        <p class="spec"><b>Newsreader</b> · 500 weight, roman + italic<br>Page titles, project names, section headings, the site logo, pull quotes.</p>
+      </div>
+      <div class="card">
+        <p class="role">Sans — body &amp; interface</p>
+        <div class="samp-sans">A designer and researcher passionate about creating healthier, more human futures.</div>
+        <p class="spec"><b>Inter</b> · 400 / 500 / 600<br>All body copy, navigation, labels, buttons, values, footers, arrows.</p>
+      </div>
+      <div class="card">
+        <p class="role">Handwritten — captions only</p>
+        <div class="samp-hand">running the whidbey island half marathon</div>
+        <p class="spec"><b>Caveat</b> · 600<br>Photo captions and small delight details. Never for body copy, headings, or UI.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE -->
+  <div class="sec">
+    <h2>Casing &amp; tracking</h2>
+    <p>Sentence case throughout. All-caps is not part of this system.</p>
+    <ul class="rules">
+      <li><b>Sentence case everywhere</b> — navigation, eyebrows, labels, buttons, back links, footers.</li>
+      <li class="no"><b>No <code>text-transform: uppercase</code></b> anywhere in the stylesheets.</li>
+      <li><b>Tracking stays tight</b> — <code>letter-spacing: .01em</code> on small type; the wide tracking that caps needed is gone.</li>
+      <li><b>Labels earn attention by weight and opacity</b>, not by shouting: 600 weight at 12.5&ndash;13px.</li>
+    </ul>
+  </div>
+
+  <!-- COLOR -->
+  <div class="sec">
+    <h2>Color</h2>
+    <p>Warm paper ground, near-black ink, and a confetti accent set. Pink is the action color; the others are for accents and highlights only.</p>
+    <div class="sw-row">
+      <div class="sw"><div class="sw-chip" style="background:#faf6ec"></div><span class="sw-name">Paper</span><span class="sw-hex">#faf6ec</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#211d24"></div><span class="sw-name">Ink</span><span class="sw-hex">#211d24</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#ef6f9e"></div><span class="sw-name">Pink — action</span><span class="sw-hex">#ef6f9e</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#df5687"></div><span class="sw-name">Pink deep — hover</span><span class="sw-hex">#df5687</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#8b6cd8"></div><span class="sw-name">Purple</span><span class="sw-hex">#8b6cd8</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#3fb8b0"></div><span class="sw-name">Turquoise</span><span class="sw-hex">#3fb8b0</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#ef7c5c"></div><span class="sw-name">Coral — eyebrows</span><span class="sw-hex">#ef7c5c</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#f6c445"></div><span class="sw-name">Yellow</span><span class="sw-hex">#f6c445</span></div>
+    </div>
+    <p class="spec" style="margin-top:18px">Body text sits at 78% ink, muted text at 60%, faint captions and footers at 45%. Hairlines use <code>#e1d9c9</code>.</p>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="sec">
+    <h2>Buttons</h2>
+    <p>One shape, two variants. Same padding, radius, size, weight, and hover lift on every page.</p>
+    <div class="card">
+      <div class="btn-row">
+        <a class="btn btn--solid" href="#">Download resume (PDF) <span class="arrow-glyph">↓</span></a>
+        <a class="btn" href="#">Read about it here <span class="arrow-glyph">→</span></a>
+        <a class="link-arrow" href="#"><span class="arrow-glyph">←</span> All work</a>
+      </div>
+      <p class="spec">Pill <code>999px</code> · padding <code>13px 26px</code> · Inter 600 at 13.5px · lifts 2px on hover.<br>
+      <b>Solid</b> = primary action (pink → deep pink on hover). <b>Outline</b> = secondary. <b>Text + arrow</b> = navigation.</p>
+    </div>
+  </div>
+
+  <!-- ARROWS -->
+  <div class="sec">
+    <h2>Arrows</h2>
+    <p>Three glyphs, always in Inter, always at the size of the text they sit beside. No SVG arrow one place and a character another.</p>
+    <div class="card">
+      <table class="arrow-tbl">
+        <tr><th></th><th>Glyph</th><th>Means</th><th>Used for</th></tr>
+        <tr><td>→</td><td><code>U+2192</code></td><td>Forward</td><td>Next project, outbound links, project list rows</td></tr>
+        <tr><td>←</td><td><code>U+2190</code></td><td>Back</td><td>Back to home, all work</td></tr>
+        <tr><td>↓</td><td><code>U+2193</code></td><td>Down</td><td>Downloads, scroll cue</td></tr>
+      </table>
+      <p class="spec">Forward arrows sit <b>after</b> the label; back and download arrows sit <b>before</b> it. Arrows nudge 2px in their own direction on hover.</p>
+    </div>
+  </div>
+
+  <!-- SPACING -->
+  <div class="sec">
+    <h2>Spacing &amp; shape</h2>
+    <p>A 4px-based scale. Radii: 8px on small tiles, 14px on cards and photos, full pill on buttons.</p>
+    <div class="card">
+      <div class="scale-row">
+        <div class="scale-item"><div class="scale-bar" style="height:4px"></div><div class="scale-lbl">4</div></div>
+        <div class="scale-item"><div class="scale-bar" style="height:8px"></div><div class="scale-lbl">8</div></div>
+        <div class="scale-item"><div class="scale-bar" style="height:12px"></div><div class="scale-lbl">12</div></div>
+        <div class="scale-item"><div class="scale-bar" style="height:16px"></div><div class="scale-lbl">16</div></div>
+        <div class="scale-item"><div class="scale-bar" style="height:24px"></div><div class="scale-lbl">24</div></div>
+        <div class="scale-item"><div class="scale-bar" style="height:32px"></div><div class="scale-lbl">32</div></div>
+        <div class="scale-item"><div class="scale-bar" style="height:48px"></div><div class="scale-lbl">48</div></div>
+        <div class="scale-item"><div class="scale-bar" style="height:64px"></div><div class="scale-lbl">64</div></div>
+        <div class="scale-item"><div class="scale-bar" style="height:80px"></div><div class="scale-lbl">80</div></div>
+      </div>
+      <p class="spec">Motion uses one easing curve — <code>cubic-bezier(.22,.68,.16,1)</code> — at .2s for interface feedback and .7s for reveals. Everything respects <code>prefers-reduced-motion</code>.</p>
+    </div>
+  </div>
+
+  <!-- KEEPING IT -->
+  <div class="sec">
+    <h2>How to keep it</h2>
+    <p>Every page carries an identical <code>DESIGN SYSTEM</code> block at the end of its <code>&lt;style&gt;</code> element. It is the last thing the browser reads, so it wins.</p>
+    <ul class="rules">
+      <li><b>Edit the block, not the page.</b> Change it in one file, paste the same block into the other seven.</li>
+      <li><b>New page?</b> Copy the block in and the page inherits the whole system.</li>
+      <li><b>New component?</b> Reuse <code>.btn</code>, <code>.link-arrow</code>, <code>.arrow-glyph</code> and the tokens rather than writing fresh values.</li>
+      <li class="no"><b>Never</b> add a fourth typeface, an all-caps rule, a new arrow style, or a hard-coded hex that isn't a token.</li>
+    </ul>
+  </div>
+
+  <footer>Design system reference · Sara Behbakht portfolio</footer>
+</div>
+</body>
+</html>
