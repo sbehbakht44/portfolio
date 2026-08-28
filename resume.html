@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resume — Sara Behbakht</title>
-<meta name="description" content="Resume of Sara Behbakht — education, experience, leadership, and skills, with a downloadable PDF.">
-<meta property="og:title" content="Resume — Sara Behbakht">
-<meta property="og:description" content="Resume of Sara Behbakht — education, experience, leadership, and skills, with a downloadable PDF.">
+<title>Resume · Sara Behbakht</title>
+<meta name="description" content="Resume of Sara Behbakht: education, experience, leadership, and skills, with a downloadable PDF.">
+<meta property="og:title" content="Resume · Sara Behbakht">
+<meta property="og:description" content="Resume of Sara Behbakht: education, experience, leadership, and skills, with a downloadable PDF.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='12' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(-16 16 12)'/%3E%3Cellipse cx='20.5' cy='12.5' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(16 20.5 12.5)'/%3E%3CclipPath id='bc'%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5'/%3E%3C/clipPath%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='%23f6c445'/%3E%3Cg clip-path='url(%23bc)'%3E%3Crect x='14' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3Crect x='19.5' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3C/g%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='none' stroke='%23211d24' stroke-width='1.1'/%3E%3Ccircle cx='8.3' cy='16.3' r='2.1' fill='%23211d24'/%3E%3Cpath d='M7.2 14.4 L5.8 12.5 M9.2 14.6 L9.4 12.3' stroke='%23211d24' stroke-width='0.9' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='5.8' cy='12.3' r='0.7' fill='%23211d24'/%3E%3Ccircle cx='9.4' cy='12.1' r='0.7' fill='%23211d24'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,10 +77,10 @@
   footer{ text-align:center; padding:40px 0 56px; font-size:16px; opacity:.4; }
 
   /* ============================================================
-     DESIGN SYSTEM — single source of truth, applied to every page
+     DESIGN SYSTEM: single source of truth, applied to every page
      Type:   Bagel Fat One (display, #370000) · Work Sans (sans, body/UI)
              Caveat (handwritten, captions & small details only)
-     Case:   sentence case everywhere — no all-caps
+     Case:   sentence case everywhere; no all-caps
      Arrows: → forward · ← back · ↓ down
      ============================================================ */
   :root{
@@ -120,7 +120,7 @@
 
   /* display = headings & display type only */
   nav .logo,
-  h1, h2, h3,
+  h1, h2,
   .ab-title, .ab-warmline,
   .res-title, .res-warmline,
   .hero-typed,
@@ -129,11 +129,17 @@
   .project-item h3,
   .next .title,
   .overview h2,
-  .subhead2, h3.subhead2,
-  .details-card h3,
   .idx,
   .problem-lede{
     font-family:var(--font-display) !important;
+    color:var(--display-color);
+  }
+
+  /* subheadings = Work Sans, not the display face -- still the reading-brown ink */
+  .subhead2, h3.subhead2,
+  .details-card h3{
+    font-family:var(--font-sans) !important;
+    font-weight:600;
     color:var(--display-color);
   }
 
@@ -151,7 +157,7 @@
     font-weight:300;
   }
 
-  /* sans, UI text = nav, buttons, labels, values — kept heavier so small type stays legible */
+  /* sans, UI text = nav, buttons, labels, values: kept heavier so small type stays legible */
   nav .links, nav .links a,
   .backbar a, .to-work, .ic-readmore, .link-arrow,
   .tags, .credit,
@@ -188,7 +194,7 @@
     opacity:1; border-bottom:2px solid var(--coral); padding-bottom:3px;
   }
 
-  /* ---------- 5. ARROWS — one look everywhere ---------- */
+  /* ---------- 5. ARROWS: one look everywhere ---------- */
   /* every arrow in the site is one of: → forward · ← back · ↓ down,
      always rendered in the sans face at a consistent size and weight */
   .arrow, .arrow-glyph{
@@ -212,7 +218,7 @@
   }
   .backbar a:hover, .to-work:hover, .ic-readmore:hover, .link-arrow:hover{ opacity:1; }
 
-  /* ---------- 6. BUTTONS — one base, two variants ---------- */
+  /* ---------- 6. BUTTONS: one base, two variants ---------- */
   .btn, .wrapup-btn, .res-download{
     display:inline-flex; align-items:center; justify-content:center; gap:9px;
     padding:13px 26px; border-radius:var(--r-pill);
@@ -263,7 +269,7 @@
   <h1 class="res-title reveal">Here&rsquo;s my resume</h1>
   <p class="res-warmline reveal">the highlights, in one page</p>
   <div class="res-prose reveal">
-    <p>A quick look at my education, experience, and skills &mdash; or grab the PDF below to keep for later.</p>
+    <p>A quick look at my education, experience, and skills, or grab the PDF below to keep for later.</p>
   </div>
 
   <div class="res-frame reveal">

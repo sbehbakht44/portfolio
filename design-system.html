@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design System — Sara Behbakht</title>
+<title>Design System · Sara Behbakht</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='12' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(-16 16 12)'/%3E%3Cellipse cx='20.5' cy='12.5' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(16 20.5 12.5)'/%3E%3CclipPath id='bc'%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5'/%3E%3C/clipPath%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='%23f6c445'/%3E%3Cg clip-path='url(%23bc)'%3E%3Crect x='14' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3Crect x='19.5' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3C/g%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='none' stroke='%23211d24' stroke-width='1.1'/%3E%3Ccircle cx='8.3' cy='16.3' r='2.1' fill='%23211d24'/%3E%3Cpath d='M7.2 14.4 L5.8 12.5 M9.2 14.6 L9.4 12.3' stroke='%23211d24' stroke-width='0.9' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='5.8' cy='12.3' r='0.7' fill='%23211d24'/%3E%3Ccircle cx='9.4' cy='12.1' r='0.7' fill='%23211d24'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Bagel+Fat+One&family=Work+Sans:wght@300;500;600&display=swap" rel="stylesheet">
@@ -55,6 +55,7 @@
   .samp-display{ font-family:var(--font-display); color:var(--display-color); font-size:30px; line-height:1.15; }
   .samp-sans{ font-family:var(--font-sans); font-weight:300; font-size:17px; line-height:1.55; }
   .samp-sans-ui{ font-family:var(--font-sans); font-weight:500; font-size:16px; line-height:1.55; }
+  .samp-sans-sub{ font-family:var(--font-sans); font-weight:600; color:var(--display-color); font-size:22px; line-height:1.3; }
   .samp-hand{ font-family:var(--font-hand); font-size:24px; }
 
   .sw{ display:flex; flex-direction:column; gap:8px; }
@@ -129,34 +130,39 @@
 <div class="wrap">
 
   <span class="eyebrow">Design system</span>
-  <h1>Sara Behbakht — portfolio</h1>
+  <h1>Sara Behbakht · portfolio</h1>
   <p class="lede">One display face, one body face, one arrow set, one button.</p>
   <p class="meta">Applies to every page: home · about · resume · four project case studies.</p>
 
   <!-- TYPE -->
   <div class="sec">
     <h2>Typography</h2>
-    <p>Two families, each with one job — plus a handwritten face for small delight details. Nothing else gets loaded or used.</p>
+    <p>Two families, each with one job, plus a handwritten face for small delight details. Nothing else gets loaded or used.</p>
     <div class="grid-2">
       <div class="card">
-        <p class="role">Display — headings &amp; titles</p>
+        <p class="role">Display · titles &amp; major headings</p>
         <div class="samp-display">Hey, welcome to my portfolio</div>
-        <p class="spec"><b>Bagel Fat One</b> · always set in <code>#370000</code><br>Page titles, project names, section headings, the site logo, pull quotes.</p>
+        <p class="spec"><b>Bagel Fat One</b> · always set in <code>#370000</code><br>Page titles, project names, top-level section headings (Overview, The Problem, Wrap Up), the site logo, pull quotes. Not used for subheadings.</p>
       </div>
       <div class="card">
-        <p class="role">Handwritten — captions only</p>
+        <p class="role">Sans · subheadings</p>
+        <div class="samp-sans-sub">Women&rsquo;s Stories</div>
+        <p class="spec"><b>Work Sans</b> · 600 · set in <code>#370000</code>, the same ink as headings<br>Card- and section-level subheadings: story quotes, concept names, &ldquo;Project Details.&rdquo; Sits between the display headline and body copy in weight, never in typeface.</p>
+      </div>
+      <div class="card">
+        <p class="role">Handwritten · captions only</p>
         <div class="samp-hand">running the whidbey island half marathon</div>
         <p class="spec"><b>Caveat</b> · 600<br>Photo captions and small delight details. Never for body copy, headings, or UI.</p>
       </div>
       <div class="card">
-        <p class="role">Sans — body copy</p>
+        <p class="role">Sans · body copy</p>
         <div class="samp-sans">A designer and researcher passionate about creating healthier, more human futures.</div>
-        <p class="spec"><b>Work Sans</b> · 300 (light) · set in <code>#370000</code>, the same ink as headings<br>Paragraph copy: bios, project narrative, overviews — anywhere reading comfort at length matters most.</p>
+        <p class="spec"><b>Work Sans</b> · 300 (light) · set in <code>#370000</code>, the same ink as headings<br>Paragraph copy: bios, project narrative, overviews, anywhere reading comfort at length matters most.</p>
       </div>
       <div class="card">
-        <p class="role">Sans — navigation &amp; interface</p>
+        <p class="role">Sans · navigation &amp; interface</p>
         <div class="samp-sans-ui">Next project · Read the case study · Download resume</div>
-        <p class="spec"><b>Work Sans</b> · 500 / 600 · stays in ink <code>#211d24</code>, not heading brown, so it reads as distinctly interactive<br>Navigation, buttons, labels, values, tags, footers, arrows — kept heavier than body copy so small type stays legible.</p>
+        <p class="spec"><b>Work Sans</b> · 500 / 600 · stays in ink <code>#211d24</code>, not heading brown, so it reads as distinctly interactive<br>Navigation, buttons, labels, values, tags, footers, arrows, kept heavier than body copy so small type stays legible.</p>
       </div>
     </div>
   </div>
@@ -166,11 +172,11 @@
     <h2>Casing, tracking &amp; size</h2>
     <p>Sentence case throughout. All-caps is not part of this system.</p>
     <ul class="rules">
-      <li><b>Sentence case everywhere</b> — navigation, eyebrows, labels, buttons, back links, footers.</li>
+      <li><b>Sentence case everywhere</b>: navigation, eyebrows, labels, buttons, back links, footers.</li>
       <li class="no"><b>No <code>text-transform: uppercase</code></b> anywhere in the stylesheets.</li>
-      <li><b>Tracking stays tight</b> — <code>letter-spacing: .01em</code> on small type; the wide tracking that caps needed is gone.</li>
-      <li><b>Labels earn attention by weight and opacity</b>, not by shouting — never by shrinking.</li>
-      <li><b>16px is the floor.</b> No text on the site, anywhere — labels, tags, captions, footnotes — renders smaller than 16px.</li>
+      <li><b>Tracking stays tight</b>: <code>letter-spacing: .01em</code> on small type; the wide tracking that caps needed is gone.</li>
+      <li><b>Labels earn attention by weight and opacity</b>, not by shouting; never by shrinking.</li>
+      <li><b>16px is the floor.</b> No text on the site, anywhere (labels, tags, captions, footnotes) renders smaller than 16px.</li>
     </ul>
   </div>
 
@@ -180,27 +186,27 @@
     <p>Warm paper ground, one ink for reading and one for acting, and a confetti accent set. Pink is the action color; the others are for accents and highlights only.</p>
     <div class="sw-row">
       <div class="sw"><div class="sw-chip" style="background:#faf6ec"></div><span class="sw-name">Paper</span><span class="sw-hex">#faf6ec</span></div>
-      <div class="sw"><div class="sw-chip" style="background:#211d24"></div><span class="sw-name">Ink — interactive</span><span class="sw-hex">#211d24</span></div>
-      <div class="sw"><div class="sw-chip" style="background:#370000"></div><span class="sw-name">Display brown — reading</span><span class="sw-hex">#370000</span></div>
-      <div class="sw"><div class="sw-chip" style="background:#ef6f9e"></div><span class="sw-name">Pink — action</span><span class="sw-hex">#ef6f9e</span></div>
-      <div class="sw"><div class="sw-chip" style="background:#df5687"></div><span class="sw-name">Pink deep — hover</span><span class="sw-hex">#df5687</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#211d24"></div><span class="sw-name">Ink · interactive</span><span class="sw-hex">#211d24</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#370000"></div><span class="sw-name">Display brown · reading</span><span class="sw-hex">#370000</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#ef6f9e"></div><span class="sw-name">Pink · action</span><span class="sw-hex">#ef6f9e</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#df5687"></div><span class="sw-name">Pink deep · hover</span><span class="sw-hex">#df5687</span></div>
       <div class="sw"><div class="sw-chip" style="background:#8b6cd8"></div><span class="sw-name">Purple</span><span class="sw-hex">#8b6cd8</span></div>
       <div class="sw"><div class="sw-chip" style="background:#3fb8b0"></div><span class="sw-name">Turquoise</span><span class="sw-hex">#3fb8b0</span></div>
-      <div class="sw"><div class="sw-chip" style="background:#ef7c5c"></div><span class="sw-name">Coral — eyebrows</span><span class="sw-hex">#ef7c5c</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#ef7c5c"></div><span class="sw-name">Coral · eyebrows</span><span class="sw-hex">#ef7c5c</span></div>
       <div class="sw"><div class="sw-chip" style="background:#f6c445"></div><span class="sw-name">Yellow</span><span class="sw-hex">#f6c445</span></div>
     </div>
-    <p class="spec" style="margin-top:18px">Headings and body copy are both set in <code>#370000</code> — body copy at 78% opacity, muted text at 60%, faint captions and footers at 45%. Anything clickable (nav, buttons, back links, arrows) uses <code>#211d24</code> instead, so it reads as distinctly interactive rather than as reading copy. Hairlines use <code>#e1d9c9</code>.</p>
+    <p class="spec" style="margin-top:18px">Headings and body copy are both set in <code>#370000</code>: body copy at 78% opacity, muted text at 60%, faint captions and footers at 45%. Anything clickable (nav, buttons, back links, arrows) uses <code>#211d24</code> instead, so it reads as distinctly interactive rather than as reading copy. Hairlines use <code>#e1d9c9</code>.</p>
   </div>
 
   <!-- TAGS -->
   <div class="sec">
     <h2>Tags</h2>
-    <p>Every case study is tagged from one fixed vocabulary of four — no freeform labels, so the set stays scannable across the whole site.</p>
+    <p>Every case study is tagged from one fixed vocabulary of four: no freeform labels, so the set stays scannable across the whole site.</p>
     <div class="card">
       <div class="tags-demo" style="display:flex; flex-wrap:wrap; gap:8px;">
         <span class="tag-chip">Design</span><span class="tag-chip">Healthcare</span><span class="tag-chip">Education</span><span class="tag-chip">Research</span>
       </div>
-      <p class="spec" style="margin-top:14px">White pill, <code>1px</code> line border, Work Sans 500 at 16px. A project can carry more than one tag — <b>Design</b> and <b>Research</b> apply to nearly everything Sara ships; <b>Healthcare</b> and <b>Education</b> mark the domain. Tags live on the project header only — the home page list stays untagged.</p>
+      <p class="spec" style="margin-top:14px">White pill, <code>1px</code> line border, Work Sans 500 at 16px. A project can carry more than one tag: <b>Design</b> and <b>Research</b> apply to nearly everything Sara ships; <b>Healthcare</b> and <b>Education</b> mark the domain. Tags live on the project header only: the home page list stays untagged.</p>
     </div>
   </div>
 
@@ -209,9 +215,9 @@
     <h2>Header images</h2>
     <p>The image at the top of every case study is a plain rectangle, not a floating card.</p>
     <ul class="rules">
-      <li><b>No caption.</b> The image speaks for itself — no credit line laid over it.</li>
-      <li class="no"><b>No card frame.</b> Square corners, no drop shadow — it isn’t a boxed-in photo, it’s the page itself.</li>
-      <li><b>Aligned to the content margin</b>, not the outer page edge — same left/right line as the title, the body copy, and everything below it.</li>
+      <li><b>No caption.</b> The image speaks for itself. No credit line laid over it.</li>
+      <li class="no"><b>No card frame.</b> Square corners, no drop shadow; it isn’t a boxed-in photo, it’s the page itself.</li>
+      <li><b>Aligned to the content margin</b>, not the outer page edge: same left/right line as the title, the body copy, and everything below it.</li>
     </ul>
   </div>
 
@@ -261,7 +267,7 @@
         <div class="scale-item"><div class="scale-bar" style="height:64px"></div><div class="scale-lbl">64</div></div>
         <div class="scale-item"><div class="scale-bar" style="height:80px"></div><div class="scale-lbl">80</div></div>
       </div>
-      <p class="spec">Motion uses one easing curve — <code>cubic-bezier(.22,.68,.16,1)</code> — at .2s for interface feedback and .7s for reveals. Everything respects <code>prefers-reduced-motion</code>.</p>
+      <p class="spec">Motion uses one easing curve (<code>cubic-bezier(.22,.68,.16,1)</code>) at .2s for interface feedback and .7s for reveals. Everything respects <code>prefers-reduced-motion</code>.</p>
     </div>
   </div>
 
