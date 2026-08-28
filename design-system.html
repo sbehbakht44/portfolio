@@ -6,12 +6,13 @@
 <title>Design System — Sara Behbakht</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='12' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(-16 16 12)'/%3E%3Cellipse cx='20.5' cy='12.5' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(16 20.5 12.5)'/%3E%3CclipPath id='bc'%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5'/%3E%3C/clipPath%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='%23f6c445'/%3E%3Cg clip-path='url(%23bc)'%3E%3Crect x='14' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3Crect x='19.5' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3C/g%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='none' stroke='%23211d24' stroke-width='1.1'/%3E%3Ccircle cx='8.3' cy='16.3' r='2.1' fill='%23211d24'/%3E%3Cpath d='M7.2 14.4 L5.8 12.5 M9.2 14.6 L9.4 12.3' stroke='%23211d24' stroke-width='0.9' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='5.8' cy='12.3' r='0.7' fill='%23211d24'/%3E%3Ccircle cx='9.4' cy='12.1' r='0.7' fill='%23211d24'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Bagel+Fat+One&family=Work+Sans:wght@300;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --font-serif:'Newsreader', Georgia, 'Times New Roman', serif;
-    --font-sans:'Inter', system-ui, -apple-system, sans-serif;
+    --font-display:'Bagel Fat One', 'Baloo 2', system-ui, sans-serif;
+    --font-sans:'Work Sans', system-ui, -apple-system, sans-serif;
     --font-hand:'Caveat', 'Bradley Hand', cursive;
+    --display-color:#370000;
     --bg:#faf6ec; --ink:#211d24;
     --pink:#ef6f9e; --pink-deep:#df5687; --turq:#3fb8b0;
     --yellow:#f6c445; --purple:#8b6cd8; --coral:#ef7c5c; --line:#e1d9c9;
@@ -22,16 +23,16 @@
   *{ box-sizing:border-box; text-transform:none; }
   body{
     margin:0; background:var(--bg); color:var(--ink);
-    font-family:var(--font-sans); font-size:15px; line-height:1.6;
+    font-family:var(--font-sans); font-weight:300; font-size:15px; line-height:1.6;
   }
   .wrap{ max-width:980px; margin:0 auto; padding:64px 40px 96px; }
 
-  h1{ font-family:var(--font-serif); font-weight:500; font-size:46px; line-height:1.1; margin:0 0 10px; }
-  .lede{ font-family:var(--font-serif); font-style:italic; font-size:20px; opacity:.75; margin:0 0 8px; }
+  h1{ font-family:var(--font-display); color:var(--display-color); font-size:46px; line-height:1.1; margin:0 0 10px; }
+  .lede{ font-family:var(--font-sans); font-weight:300; font-style:italic; font-size:20px; opacity:.75; margin:0 0 8px; }
   .meta{ font-size:13.5px; opacity:var(--o-faint); margin:0 0 56px; }
 
   h2{
-    font-family:var(--font-serif); font-weight:500; font-size:26px; margin:0 0 6px;
+    font-family:var(--font-display); color:var(--display-color); font-size:26px; margin:0 0 6px;
   }
   .sec{ padding-top:44px; margin-top:44px; border-top:1px solid var(--line); }
   .sec:first-of-type{ border-top:none; margin-top:0; padding-top:0; }
@@ -51,8 +52,9 @@
 
   .role{ font-size:12.5px; font-weight:600; opacity:var(--o-muted); margin:0 0 10px; }
   .spec{ font-size:12.5px; opacity:var(--o-faint); margin:10px 0 0; }
-  .samp-serif{ font-family:var(--font-serif); font-size:30px; line-height:1.15; }
-  .samp-sans{ font-family:var(--font-sans); font-size:17px; line-height:1.55; }
+  .samp-display{ font-family:var(--font-display); color:var(--display-color); font-size:30px; line-height:1.15; }
+  .samp-sans{ font-family:var(--font-sans); font-weight:300; font-size:17px; line-height:1.55; }
+  .samp-sans-ui{ font-family:var(--font-sans); font-weight:500; font-size:15px; line-height:1.55; }
   .samp-hand{ font-family:var(--font-hand); font-size:24px; }
 
   .sw{ display:flex; flex-direction:column; gap:8px; }
@@ -124,28 +126,33 @@
 
   <span class="eyebrow">Design system</span>
   <h1>Sara Behbakht — portfolio</h1>
-  <p class="lede">Three typefaces, one arrow set, one button.</p>
+  <p class="lede">One display face, one body face, one arrow set, one button.</p>
   <p class="meta">Applies to every page: home · about · resume · four project case studies.</p>
 
   <!-- TYPE -->
   <div class="sec">
     <h2>Typography</h2>
-    <p>Three families, each with one job. Nothing else gets loaded or used.</p>
-    <div class="grid-3">
+    <p>Two families, each with one job — plus a handwritten face for small delight details. Nothing else gets loaded or used.</p>
+    <div class="grid-2">
       <div class="card">
-        <p class="role">Serif — display</p>
-        <div class="samp-serif">Hey, welcome<br>to my portfolio</div>
-        <p class="spec"><b>Newsreader</b> · 500 weight, roman + italic<br>Page titles, project names, section headings, the site logo, pull quotes.</p>
-      </div>
-      <div class="card">
-        <p class="role">Sans — body &amp; interface</p>
-        <div class="samp-sans">A designer and researcher passionate about creating healthier, more human futures.</div>
-        <p class="spec"><b>Inter</b> · 400 / 500 / 600<br>All body copy, navigation, labels, buttons, values, footers, arrows.</p>
+        <p class="role">Display — headings &amp; titles</p>
+        <div class="samp-display">Hey, welcome to my portfolio</div>
+        <p class="spec"><b>Bagel Fat One</b> · always set in <code>#370000</code><br>Page titles, project names, section headings, the site logo, pull quotes.</p>
       </div>
       <div class="card">
         <p class="role">Handwritten — captions only</p>
         <div class="samp-hand">running the whidbey island half marathon</div>
         <p class="spec"><b>Caveat</b> · 600<br>Photo captions and small delight details. Never for body copy, headings, or UI.</p>
+      </div>
+      <div class="card">
+        <p class="role">Sans — body copy</p>
+        <div class="samp-sans">A designer and researcher passionate about creating healthier, more human futures.</div>
+        <p class="spec"><b>Work Sans</b> · 300 (light)<br>Paragraph copy: bios, project narrative, overviews — anywhere reading comfort at length matters most.</p>
+      </div>
+      <div class="card">
+        <p class="role">Sans — navigation &amp; interface</p>
+        <div class="samp-sans-ui">Next project · Read the case study · Download resume</div>
+        <p class="spec"><b>Work Sans</b> · 500 / 600<br>Navigation, buttons, labels, values, tags, footers, arrows — kept heavier than body copy so small type stays legible.</p>
       </div>
     </div>
   </div>
@@ -189,7 +196,7 @@
         <a class="btn" href="#">Read about it here <span class="arrow-glyph">→</span></a>
         <a class="link-arrow" href="#"><span class="arrow-glyph">←</span> All work</a>
       </div>
-      <p class="spec">Pill <code>999px</code> · padding <code>13px 26px</code> · Inter 600 at 13.5px · lifts 2px on hover.<br>
+      <p class="spec">Pill <code>999px</code> · padding <code>13px 26px</code> · Work Sans 600 at 13.5px · lifts 2px on hover.<br>
       <b>Solid</b> = primary action (pink → deep pink on hover). <b>Outline</b> = secondary. <b>Text + arrow</b> = navigation.</p>
     </div>
   </div>
@@ -197,7 +204,7 @@
   <!-- ARROWS -->
   <div class="sec">
     <h2>Arrows</h2>
-    <p>Three glyphs, always in Inter, always at the size of the text they sit beside. No SVG arrow one place and a character another.</p>
+    <p>Three glyphs, always in Work Sans, always at the size of the text they sit beside. No SVG arrow one place and a character another.</p>
     <div class="card">
       <table class="arrow-tbl">
         <tr><th></th><th>Glyph</th><th>Means</th><th>Used for</th></tr>
@@ -237,7 +244,7 @@
       <li><b>Edit the block, not the page.</b> Change it in one file, paste the same block into the other seven.</li>
       <li><b>New page?</b> Copy the block in and the page inherits the whole system.</li>
       <li><b>New component?</b> Reuse <code>.btn</code>, <code>.link-arrow</code>, <code>.arrow-glyph</code> and the tokens rather than writing fresh values.</li>
-      <li class="no"><b>Never</b> add a fourth typeface, an all-caps rule, a new arrow style, or a hard-coded hex that isn't a token.</li>
+      <li class="no"><b>Never</b> add a third body/display typeface, an all-caps rule, a new arrow style, or a hard-coded hex that isn't a token.</li>
     </ul>
   </div>
 

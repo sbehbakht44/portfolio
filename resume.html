@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='12' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(-16 16 12)'/%3E%3Cellipse cx='20.5' cy='12.5' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(16 20.5 12.5)'/%3E%3CclipPath id='bc'%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5'/%3E%3C/clipPath%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='%23f6c445'/%3E%3Cg clip-path='url(%23bc)'%3E%3Crect x='14' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3Crect x='19.5' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3C/g%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='none' stroke='%23211d24' stroke-width='1.1'/%3E%3Ccircle cx='8.3' cy='16.3' r='2.1' fill='%23211d24'/%3E%3Cpath d='M7.2 14.4 L5.8 12.5 M9.2 14.6 L9.4 12.3' stroke='%23211d24' stroke-width='0.9' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='5.8' cy='12.3' r='0.7' fill='%23211d24'/%3E%3Ccircle cx='9.4' cy='12.1' r='0.7' fill='%23211d24'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Bagel+Fat+One&family=Work+Sans:wght@300;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#faf6ec;
@@ -23,13 +23,13 @@
     --line:#e1d9c9;
   }
   *{box-sizing:border-box;}
-  body{ margin:0; font-family:'Inter',sans-serif; color:var(--ink); background:var(--bg); }
+  body{ margin:0; font-family:var(--font-sans); color:var(--ink); background:var(--bg); }
 
   nav{
     display:flex; justify-content:space-between; align-items:center;
     padding:32px 64px; border-bottom:1px solid var(--line);
   }
-  nav .logo{ font-family:'Newsreader',serif; font-style:italic; font-size:20px; text-decoration:none; color:var(--ink); }
+  nav .logo{ font-family:var(--font-display); font-style:italic; font-size:20px; text-decoration:none; color:var(--ink); }
   nav .links{ display:flex; gap:32px; font-size:13px; letter-spacing:.01em; }
   nav .links a{ color:var(--ink); text-decoration:none; opacity:.6; }
   nav .links a.is-active{ opacity:1; border-bottom:2px solid var(--coral); padding-bottom:3px; }
@@ -53,9 +53,9 @@
     font-weight:600; margin:0 0 16px; display:block;
   }
   .res-title{
-    font-family:'Newsreader',serif; font-weight:500; font-size:46px; line-height:1.15; margin:0 0 16px;
+    font-family:var(--font-display); font-weight:500; font-size:46px; line-height:1.15; margin:0 0 16px;
   }
-  .res-warmline{ font-family:'Newsreader',serif; font-style:italic; font-size:20px; opacity:.75; margin:0 0 22px; }
+  .res-warmline{ font-family:var(--font-display); font-style:italic; font-size:20px; opacity:.75; margin:0 0 22px; }
   .res-prose p{ font-size:16px; line-height:1.75; opacity:.78; margin:0 0 36px; max-width:52ch; }
 
   .res-frame{
@@ -67,7 +67,7 @@
   .res-cta{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
   .res-download{
     display:inline-flex; align-items:center; gap:10px; background:var(--pink); color:#fff;
-    font-family:'Inter',sans-serif; font-weight:600; font-size:14.5px; text-decoration:none;
+    font-family:var(--font-sans); font-weight:600; font-size:14.5px; text-decoration:none;
     padding:14px 30px; border-radius:30px; box-shadow:0 8px 20px rgba(239,111,158,.35);
     transition:filter .15s, transform .15s;
   }
@@ -78,16 +78,17 @@
 
   /* ============================================================
      DESIGN SYSTEM — single source of truth, applied to every page
-     Type:   Newsreader (serif, display) · Inter (sans, body/UI)
+     Type:   Bagel Fat One (display, #370000) · Work Sans (sans, body/UI)
              Caveat (handwritten, captions & small details only)
      Case:   sentence case everywhere — no all-caps
      Arrows: → forward · ← back · ↓ down
      ============================================================ */
   :root{
     /* type */
-    --font-serif:'Newsreader', Georgia, 'Times New Roman', serif;
-    --font-sans:'Inter', system-ui, -apple-system, sans-serif;
+    --font-display:'Bagel Fat One', 'Baloo 2', system-ui, sans-serif;
+    --font-sans:'Work Sans', system-ui, -apple-system, sans-serif;
     --font-hand:'Caveat', 'Bradley Hand', cursive;
+    --display-color:#370000;
 
     /* color */
     --bg:#faf6ec;
@@ -115,9 +116,9 @@
   }
 
   /* ---------- 1. TYPE ROLES ---------- */
-  body{ font-family:var(--font-sans); }
+  body{ font-family:var(--font-sans); font-weight:300; }
 
-  /* serif = display & headings only */
+  /* display = headings & display type only */
   nav .logo,
   h1, h2, h3,
   .ab-title, .ab-warmline,
@@ -132,7 +133,8 @@
   .details-card h3,
   .idx,
   .problem-lede{
-    font-family:var(--font-serif) !important;
+    font-family:var(--font-display) !important;
+    color:var(--display-color);
   }
 
   /* handwritten = captions and small delight details only */
@@ -141,17 +143,24 @@
     font-family:var(--font-hand) !important;
   }
 
-  /* sans = all body copy, labels, nav, buttons, values.
-     Deliberately NO bare element selectors here (p/span/div/a): those would
-     out-specify inheritance and strip the serif from headings' inner spans. */
-  nav .links, nav .links a,
-  .backbar a,
-  .dek, .tags, .credit,
-  .eyebrow, .ab-eyebrow, .res-eyebrow,
-  .label, .d-label, .d-value, .ic-label, .ic-value,
-  .pathways-label, .support-text, .wrapup-text,
+  /* sans, body copy = light weight for comfortable reading at length */
+  .dek, .support-text, .wrapup-text,
   .concept-text, .z-text, .tool-or,
-  .ab-prose p, .res-prose p, .project-item p, .overview p,
+  .ab-prose p, .res-prose p, .project-item p, .overview p{
+    font-family:var(--font-sans);
+    font-weight:300;
+  }
+
+  /* sans, UI text = nav, buttons, labels, values — kept heavier so small type stays legible */
+  nav .links, nav .links a,
+  .backbar a, .to-work, .ic-readmore, .link-arrow,
+  .tags, .credit,
+  .eyebrow, .ab-eyebrow, .res-eyebrow,
+  .label, .d-label, .d-value, .ic-label, .ic-value, .pathways-label,
+  .btn, .wrapup-btn, .res-download{
+    font-family:var(--font-sans);
+    font-weight:500;
+  }
 
   /* ---------- 2. NO ALL-CAPS, ANYWHERE ---------- */
   *{ text-transform:none !important; }
@@ -232,6 +241,7 @@
   /* ---------- 7. FOOTER ---------- */
   footer{
     font-family:var(--font-sans); font-size:13px; letter-spacing:.01em;
+    font-weight:300;
     opacity:var(--o-faint); text-align:center;
   }
 

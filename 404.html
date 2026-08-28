@@ -7,12 +7,13 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='12' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(-16 16 12)'/%3E%3Cellipse cx='20.5' cy='12.5' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(16 20.5 12.5)'/%3E%3CclipPath id='bc'%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5'/%3E%3C/clipPath%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='%23f6c445'/%3E%3Cg clip-path='url(%23bc)'%3E%3Crect x='14' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3Crect x='19.5' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3C/g%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='none' stroke='%23211d24' stroke-width='1.1'/%3E%3Ccircle cx='8.3' cy='16.3' r='2.1' fill='%23211d24'/%3E%3Cpath d='M7.2 14.4 L5.8 12.5 M9.2 14.6 L9.4 12.3' stroke='%23211d24' stroke-width='0.9' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='5.8' cy='12.3' r='0.7' fill='%23211d24'/%3E%3Ccircle cx='9.4' cy='12.1' r='0.7' fill='%23211d24'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Bagel+Fat+One&family=Work+Sans:wght@300;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --font-serif:'Newsreader', Georgia, 'Times New Roman', serif;
-    --font-sans:'Inter', system-ui, -apple-system, sans-serif;
+    --font-display:'Bagel Fat One', 'Baloo 2', system-ui, sans-serif;
+    --font-sans:'Work Sans', system-ui, -apple-system, sans-serif;
     --font-hand:'Caveat', 'Bradley Hand', cursive;
+    --display-color:#370000;
     --bg:#faf6ec; --ink:#211d24; --pink:#ef6f9e; --pink-deep:#df5687;
     --coral:#ef7c5c; --line:#e1d9c9;
     --ease:cubic-bezier(.22,.68,.16,1);
@@ -21,10 +22,10 @@
   body{
     margin:0; min-height:100vh; display:flex; flex-direction:column;
     align-items:center; justify-content:center; text-align:center;
-    background:var(--bg); color:var(--ink); font-family:var(--font-sans); padding:24px;
+    background:var(--bg); color:var(--ink); font-family:var(--font-sans); font-weight:300; padding:24px;
   }
   .eyebrow{ font-size:13px; font-weight:600; letter-spacing:.01em; color:var(--coral); margin:0 0 18px; }
-  h1{ font-family:var(--font-serif); font-weight:500; font-size:clamp(34px,6vw,56px); line-height:1.15; margin:0 0 14px; }
+  h1{ font-family:var(--font-display); color:var(--display-color); font-size:clamp(34px,6vw,56px); line-height:1.15; margin:0 0 14px; }
   p{ font-size:16px; opacity:.72; max-width:44ch; margin:0 0 34px; line-height:1.6; }
   .hand{ font-family:var(--font-hand); font-size:22px; opacity:.65; display:block; margin-top:6px; }
   .btn{
