@@ -23,20 +23,20 @@
     --line:#e1d9c9;
   }
   *{box-sizing:border-box;}
-  body{ margin:0; font-family:var(--font-sans); color:var(--ink); background:var(--bg); }
+  body{ margin:0; font-family:var(--font-sans); color:var(--display-color); background:var(--bg); }
 
   nav{
     display:flex; justify-content:space-between; align-items:center;
     padding:32px 64px; border-bottom:1px solid var(--line);
   }
   nav .logo{ font-family:var(--font-display); font-style:italic; font-size:20px; text-decoration:none; color:var(--ink); }
-  nav .links{ display:flex; gap:32px; font-size:13px; letter-spacing:.01em; }
+  nav .links{ display:flex; gap:32px; font-size:16px; letter-spacing:.01em; }
   nav .links a{ color:var(--ink); text-decoration:none; opacity:.6; }
   nav .links a.is-active{ opacity:1; border-bottom:2px solid var(--coral); padding-bottom:3px; }
 
   .backbar{ max-width:1040px; margin:0 auto; padding:28px 64px 0; }
   .backbar a{
-    font-size:13px; font-weight:600; letter-spacing:.01em;
+    font-size:16px; font-weight:600; letter-spacing:.01em;
     color:var(--ink); opacity:.55; text-decoration:none;
   }
   .backbar a:hover{ opacity:.9; }
@@ -53,7 +53,7 @@
 
   .ab-shell{ max-width:1040px; margin:0 auto; padding:36px 64px 80px; }
   .ab-eyebrow{
-    font-size:12px; letter-spacing:.01em; color:var(--coral);
+    font-size:16px; letter-spacing:.01em; color:var(--coral);
     font-weight:600; margin:0 0 16px; display:block;
   }
   .ab-title{
@@ -93,7 +93,7 @@
     .ab-photo-sq:hover{ transform:none; }
   }
 
-  footer{ text-align:center; padding:40px 0 56px; font-size:12px; opacity:.4; }
+  footer{ text-align:center; padding:40px 0 56px; font-size:16px; opacity:.4; }
 
   /* ============================================================
      DESIGN SYSTEM — single source of truth, applied to every page
@@ -186,18 +186,18 @@
 
   /* ---------- 3. LABELS & EYEBROWS (consistent small type) ---------- */
   .eyebrow, .ab-eyebrow, .res-eyebrow{
-    font-size:13px; font-weight:600; letter-spacing:.01em;
+    font-size:16px; font-weight:600; letter-spacing:.01em;
     color:var(--coral); display:block;
   }
   .label, .d-label, .ic-label, .pathways-label, .next .label{
-    font-size:12.5px; font-weight:600; letter-spacing:.01em;
+    font-size:16px; font-weight:600; letter-spacing:.01em;
   }
   .ab-photo-cap, .gallery-cap{
     letter-spacing:0; font-weight:600;
   }
 
   /* ---------- 4. NAVIGATION ---------- */
-  nav .links{ font-size:14.5px; letter-spacing:.01em; }
+  nav .links{ font-size:16px; letter-spacing:.01em; }
   nav .links a{
     color:var(--ink); text-decoration:none; opacity:var(--o-muted);
     transition:opacity .2s var(--ease);
@@ -225,7 +225,7 @@
   /* text link that ends in an arrow (back links, "next", read-more) */
   .backbar a, .to-work, .ic-readmore, .link-arrow{
     display:inline-flex; align-items:center; gap:7px;
-    font-size:13.5px; font-weight:600; letter-spacing:.01em;
+    font-size:16px; font-weight:600; letter-spacing:.01em;
     color:var(--ink); text-decoration:none; opacity:var(--o-muted);
     transition:opacity .2s var(--ease);
   }
@@ -235,7 +235,7 @@
   .btn, .wrapup-btn, .res-download{
     display:inline-flex; align-items:center; justify-content:center; gap:9px;
     padding:13px 26px; border-radius:var(--r-pill);
-    font-size:13.5px; font-weight:600; letter-spacing:.01em; line-height:1;
+    font-size:16px; font-weight:600; letter-spacing:.01em; line-height:1;
     text-decoration:none; border:1.5px solid var(--ink); background:transparent;
     color:var(--ink); opacity:1;
     box-shadow:none;
@@ -259,7 +259,7 @@
 
   /* ---------- 7. FOOTER ---------- */
   footer{
-    font-family:var(--font-sans); font-size:13px; letter-spacing:.01em;
+    font-family:var(--font-sans); font-size:16px; letter-spacing:.01em;
     font-weight:300;
     opacity:var(--o-faint); text-align:center;
   }

@@ -22,14 +22,14 @@
   }
   *{ box-sizing:border-box; text-transform:none; }
   body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:var(--font-sans); font-weight:300; font-size:15px; line-height:1.6;
+    margin:0; background:var(--bg); color:var(--display-color);
+    font-family:var(--font-sans); font-weight:300; font-size:16px; line-height:1.6;
   }
   .wrap{ max-width:980px; margin:0 auto; padding:64px 40px 96px; }
 
   h1{ font-family:var(--font-display); color:var(--display-color); font-size:46px; line-height:1.1; margin:0 0 10px; }
   .lede{ font-family:var(--font-sans); font-weight:300; font-style:italic; font-size:20px; opacity:.75; margin:0 0 8px; }
-  .meta{ font-size:13.5px; opacity:var(--o-faint); margin:0 0 56px; }
+  .meta{ font-size:16px; opacity:var(--o-faint); margin:0 0 56px; }
 
   h2{
     font-family:var(--font-display); color:var(--display-color); font-size:26px; margin:0 0 6px;
@@ -38,7 +38,7 @@
   .sec:first-of-type{ border-top:none; margin-top:0; padding-top:0; }
   .sec > p{ opacity:var(--o-body); max-width:62ch; margin:0 0 26px; }
   .eyebrow{
-    font-size:13px; font-weight:600; letter-spacing:.01em; color:var(--coral);
+    font-size:16px; font-weight:600; letter-spacing:.01em; color:var(--coral);
     display:block; margin:0 0 14px;
   }
 
@@ -50,24 +50,28 @@
   .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
   @media (max-width:760px){ .grid-2,.grid-3{ grid-template-columns:1fr; } }
 
-  .role{ font-size:12.5px; font-weight:600; opacity:var(--o-muted); margin:0 0 10px; }
-  .spec{ font-size:12.5px; opacity:var(--o-faint); margin:10px 0 0; }
+  .role{ font-size:16px; font-weight:600; opacity:var(--o-muted); margin:0 0 10px; }
+  .spec{ font-size:16px; opacity:var(--o-faint); margin:10px 0 0; }
   .samp-display{ font-family:var(--font-display); color:var(--display-color); font-size:30px; line-height:1.15; }
   .samp-sans{ font-family:var(--font-sans); font-weight:300; font-size:17px; line-height:1.55; }
-  .samp-sans-ui{ font-family:var(--font-sans); font-weight:500; font-size:15px; line-height:1.55; }
+  .samp-sans-ui{ font-family:var(--font-sans); font-weight:500; font-size:16px; line-height:1.55; }
   .samp-hand{ font-family:var(--font-hand); font-size:24px; }
 
   .sw{ display:flex; flex-direction:column; gap:8px; }
   .sw-chip{ height:60px; border-radius:var(--r-sm); border:1px solid rgba(33,29,36,.08); }
-  .sw-name{ font-size:12.5px; font-weight:600; }
-  .sw-hex{ font-size:12px; opacity:var(--o-faint); }
+  .sw-name{ font-size:16px; font-weight:600; }
+  .sw-hex{ font-size:16px; opacity:var(--o-faint); }
   .sw-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
   @media (max-width:760px){ .sw-row{ grid-template-columns:repeat(2,1fr); } }
+  .tag-chip{
+    font-size:16px; font-weight:500; padding:6px 14px; border-radius:20px;
+    background:#fff; border:1px solid var(--line); opacity:.8; color:var(--ink);
+  }
 
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:9px;
     padding:13px 26px; border-radius:var(--r-pill);
-    font-family:var(--font-sans); font-size:13.5px; font-weight:600;
+    font-family:var(--font-sans); font-size:16px; font-weight:600;
     letter-spacing:.01em; line-height:1; text-decoration:none;
     border:1.5px solid var(--ink); background:transparent; color:var(--ink);
     transition:transform .2s var(--ease), box-shadow .2s var(--ease),
@@ -80,7 +84,7 @@
     box-shadow:0 8px 20px rgba(239,111,158,.34); }
   .link-arrow{
     display:inline-flex; align-items:center; gap:7px;
-    font-size:13.5px; font-weight:600; letter-spacing:.01em;
+    font-size:16px; font-weight:600; letter-spacing:.01em;
     color:var(--ink); text-decoration:none; opacity:var(--o-muted);
     transition:opacity .2s var(--ease);
   }
@@ -89,9 +93,9 @@
     transition:transform .2s var(--ease); }
   .btn-row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
 
-  .arrow-tbl{ width:100%; border-collapse:collapse; font-size:14px; }
+  .arrow-tbl{ width:100%; border-collapse:collapse; font-size:16px; }
   .arrow-tbl th, .arrow-tbl td{ text-align:left; padding:11px 12px; border-bottom:1px solid var(--line); }
-  .arrow-tbl th{ font-size:12.5px; font-weight:600; opacity:var(--o-muted); }
+  .arrow-tbl th{ font-size:16px; font-weight:600; opacity:var(--o-muted); }
   .arrow-tbl td:first-child{ font-size:20px; width:58px; }
   .arrow-tbl tr:last-child td{ border-bottom:none; }
 
@@ -111,14 +115,14 @@
   .scale-row{ display:flex; align-items:flex-end; gap:10px; flex-wrap:wrap; }
   .scale-item{ text-align:center; }
   .scale-bar{ background:var(--purple); opacity:.5; border-radius:3px 3px 0 0; width:34px; }
-  .scale-lbl{ font-size:11.5px; opacity:var(--o-faint); margin-top:5px; }
+  .scale-lbl{ font-size:16px; opacity:var(--o-faint); margin-top:5px; }
 
   code{
     font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size:12.5px; background:rgba(33,29,36,.06);
+    font-size:16px; background:rgba(33,29,36,.06);
     padding:2px 6px; border-radius:4px;
   }
-  footer{ margin-top:64px; font-size:13px; opacity:var(--o-faint); text-align:center; }
+  footer{ margin-top:64px; font-size:16px; opacity:var(--o-faint); text-align:center; }
 </style>
 </head>
 <body>
@@ -147,35 +151,37 @@
       <div class="card">
         <p class="role">Sans — body copy</p>
         <div class="samp-sans">A designer and researcher passionate about creating healthier, more human futures.</div>
-        <p class="spec"><b>Work Sans</b> · 300 (light)<br>Paragraph copy: bios, project narrative, overviews — anywhere reading comfort at length matters most.</p>
+        <p class="spec"><b>Work Sans</b> · 300 (light) · set in <code>#370000</code>, the same ink as headings<br>Paragraph copy: bios, project narrative, overviews — anywhere reading comfort at length matters most.</p>
       </div>
       <div class="card">
         <p class="role">Sans — navigation &amp; interface</p>
         <div class="samp-sans-ui">Next project · Read the case study · Download resume</div>
-        <p class="spec"><b>Work Sans</b> · 500 / 600<br>Navigation, buttons, labels, values, tags, footers, arrows — kept heavier than body copy so small type stays legible.</p>
+        <p class="spec"><b>Work Sans</b> · 500 / 600 · stays in ink <code>#211d24</code>, not heading brown, so it reads as distinctly interactive<br>Navigation, buttons, labels, values, tags, footers, arrows — kept heavier than body copy so small type stays legible.</p>
       </div>
     </div>
   </div>
 
   <!-- CASE -->
   <div class="sec">
-    <h2>Casing &amp; tracking</h2>
+    <h2>Casing, tracking &amp; size</h2>
     <p>Sentence case throughout. All-caps is not part of this system.</p>
     <ul class="rules">
       <li><b>Sentence case everywhere</b> — navigation, eyebrows, labels, buttons, back links, footers.</li>
       <li class="no"><b>No <code>text-transform: uppercase</code></b> anywhere in the stylesheets.</li>
       <li><b>Tracking stays tight</b> — <code>letter-spacing: .01em</code> on small type; the wide tracking that caps needed is gone.</li>
-      <li><b>Labels earn attention by weight and opacity</b>, not by shouting: 600 weight at 12.5&ndash;13px.</li>
+      <li><b>Labels earn attention by weight and opacity</b>, not by shouting — never by shrinking.</li>
+      <li><b>16px is the floor.</b> No text on the site, anywhere — labels, tags, captions, footnotes — renders smaller than 16px.</li>
     </ul>
   </div>
 
   <!-- COLOR -->
   <div class="sec">
     <h2>Color</h2>
-    <p>Warm paper ground, near-black ink, and a confetti accent set. Pink is the action color; the others are for accents and highlights only.</p>
+    <p>Warm paper ground, one ink for reading and one for acting, and a confetti accent set. Pink is the action color; the others are for accents and highlights only.</p>
     <div class="sw-row">
       <div class="sw"><div class="sw-chip" style="background:#faf6ec"></div><span class="sw-name">Paper</span><span class="sw-hex">#faf6ec</span></div>
-      <div class="sw"><div class="sw-chip" style="background:#211d24"></div><span class="sw-name">Ink</span><span class="sw-hex">#211d24</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#211d24"></div><span class="sw-name">Ink — interactive</span><span class="sw-hex">#211d24</span></div>
+      <div class="sw"><div class="sw-chip" style="background:#370000"></div><span class="sw-name">Display brown — reading</span><span class="sw-hex">#370000</span></div>
       <div class="sw"><div class="sw-chip" style="background:#ef6f9e"></div><span class="sw-name">Pink — action</span><span class="sw-hex">#ef6f9e</span></div>
       <div class="sw"><div class="sw-chip" style="background:#df5687"></div><span class="sw-name">Pink deep — hover</span><span class="sw-hex">#df5687</span></div>
       <div class="sw"><div class="sw-chip" style="background:#8b6cd8"></div><span class="sw-name">Purple</span><span class="sw-hex">#8b6cd8</span></div>
@@ -183,7 +189,30 @@
       <div class="sw"><div class="sw-chip" style="background:#ef7c5c"></div><span class="sw-name">Coral — eyebrows</span><span class="sw-hex">#ef7c5c</span></div>
       <div class="sw"><div class="sw-chip" style="background:#f6c445"></div><span class="sw-name">Yellow</span><span class="sw-hex">#f6c445</span></div>
     </div>
-    <p class="spec" style="margin-top:18px">Body text sits at 78% ink, muted text at 60%, faint captions and footers at 45%. Hairlines use <code>#e1d9c9</code>.</p>
+    <p class="spec" style="margin-top:18px">Headings and body copy are both set in <code>#370000</code> — body copy at 78% opacity, muted text at 60%, faint captions and footers at 45%. Anything clickable (nav, buttons, back links, arrows) uses <code>#211d24</code> instead, so it reads as distinctly interactive rather than as reading copy. Hairlines use <code>#e1d9c9</code>.</p>
+  </div>
+
+  <!-- TAGS -->
+  <div class="sec">
+    <h2>Tags</h2>
+    <p>Every case study is tagged from one fixed vocabulary of four — no freeform labels, so the set stays scannable across the whole site.</p>
+    <div class="card">
+      <div class="tags-demo" style="display:flex; flex-wrap:wrap; gap:8px;">
+        <span class="tag-chip">Design</span><span class="tag-chip">Healthcare</span><span class="tag-chip">Education</span><span class="tag-chip">Research</span>
+      </div>
+      <p class="spec" style="margin-top:14px">White pill, <code>1px</code> line border, Work Sans 500 at 16px. A project can carry more than one tag — <b>Design</b> and <b>Research</b> apply to nearly everything Sara ships; <b>Healthcare</b> and <b>Education</b> mark the domain. Tags appear in the same order and style in two places: the project header and the case-study row on the home page.</p>
+    </div>
+  </div>
+
+  <!-- HEADER IMAGES -->
+  <div class="sec">
+    <h2>Header images</h2>
+    <p>The image at the top of every case study is a plain rectangle, not a floating card.</p>
+    <ul class="rules">
+      <li><b>No caption.</b> The image speaks for itself — no credit line laid over it.</li>
+      <li class="no"><b>No card frame.</b> Square corners, no drop shadow — it isn’t a boxed-in photo, it’s the page itself.</li>
+      <li><b>Aligned to the content margin</b>, not the outer page edge — same left/right line as the title, the body copy, and everything below it.</li>
+    </ul>
   </div>
 
   <!-- BUTTONS -->
