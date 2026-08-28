@@ -72,7 +72,7 @@ Pages redeploys automatically in about a minute.
 
 ## Design system
 
-Three typefaces (Newsreader for display, Inter for body/UI, Caveat for captions),
+Two typefaces (Bagel Fat One in #370000 for display, Work Sans for body/UI — light for paragraphs, medium/semibold for nav, buttons, and labels) plus Caveat for captions,
 sentence case everywhere, one arrow set (→ ← ↓), one button style. The full spec
 lives in `design-system.html`, and every page carries the same `DESIGN SYSTEM`
 block at the end of its `<style>` — edit it in one file, mirror to the others.
