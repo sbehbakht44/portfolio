@@ -153,6 +153,12 @@
   .support-text{ font-size:16px; line-height:1.85; opacity:.7; max-width:66ch; margin:38px 0 0; }
 
   .wrapup-text{ font-size:16px; line-height:1.85; opacity:.78; max-width:64ch; margin:0 0 20px; }
+  .source-note{ font-size:16px; font-weight:400; line-height:1.6; opacity:.45; max-width:66ch; margin:0 0 44px; }
+  .source-note a{ color:var(--ink); text-decoration:underline; text-underline-offset:2px; }
+  .source-note a:hover{ opacity:1; }
+  /* pull the credit up under the block it cites */
+  .card-row:has(+ .source-note){ margin-bottom:18px; }
+  .wrapup-text:has(+ .source-note){ margin-bottom:10px; }
   .wrapup-links{ display:flex; gap:16px; flex-wrap:wrap; margin:36px 0 56px; }
   .wrapup-row{ display:grid; grid-template-columns:1fr 340px; gap:60px; align-items:start; }
   @media (max-width:860px){ .wrapup-row{ grid-template-columns:1fr; } }
@@ -436,6 +442,8 @@
     <div class="info-card reveal"><div class="ic-value">1 in 5</div><div class="ic-label">say they didn&rsquo;t get the mental health support they needed, held back by cost, stigma, or not knowing where to turn.</div></div>
   </div>
 
+  <p class="source-note reveal">Sources: <a href="https://www.kff.org/mental-health/roughly-1-in-5-adolescents-report-experiencing-symptoms-of-anxiety-or-depression/" target="_blank" rel="noopener">KFF</a> analysis of the Teen National Health Interview Survey, and the <a href="https://www.cdc.gov/yrbs/index.html" target="_blank" rel="noopener">CDC Youth Risk Behavior Survey</a>.</p>
+
   <p class="support-text reveal">California&rsquo;s Department of Health and Human Services partnered with Kooth and IDEO to ask: <strong>how might we support young people in getting the care they need to be mentally well, statewide and for free?</strong></p>
 
   <p class="support-text reveal">As Co-Lead Interaction Designer, I worked alongside the Kooth team, client partners, developers, researchers, and clinical stakeholders over the course of a year, from first sketch to beta, shaping the app&rsquo;s onboarding, tools, content, community, and coaching. Soluna launched on iOS and Android on January 1, 2024, in English and Spanish.</p>
@@ -539,6 +547,8 @@
       </div>
 
       <p class="wrapup-text reveal" style="margin-top:8px;">Soluna launched statewide in January 2024 and has since reached over 160,000 registered young people across California. 95% of users say they&rsquo;d recommend it to a friend, 87% say it helped them access the mental health support they needed, and 49% say they wouldn&rsquo;t have had access to that support otherwise. An independent evaluation by Northwestern University found users saw meaningful reductions in distress and anxiety within a month, with those gains holding three months later. Other states, including New Jersey, have since explored bringing Soluna&rsquo;s model to their own young people.</p>
+
+      <p class="source-note reveal">Figures from <a href="https://solunaapp.com/impact" target="_blank" rel="noopener">Soluna&rsquo;s 2024 to 2025 impact reporting</a>, with the evaluation by Northwestern University&rsquo;s Lab for Scalable Mental Health.</p>
 
       <p class="wrapup-text reveal">I put my heart and soul into Soluna, and it remains one of my favorite projects in my career so far.</p>
 
