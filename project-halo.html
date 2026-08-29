@@ -134,6 +134,21 @@
   .info-card--photo.info-card--bare{ background:none; border:none; padding:0; box-shadow:none; }
   .info-card--photo.info-card--bare .ic-media{ border:none; }
 
+  /* opportunity cards: one confetti accent each, emoji in a soft tinted disc */
+  .opp-card{ background:#fff; }
+  .opp-card .opp-icon{
+    display:flex; align-items:center; justify-content:center;
+    width:54px; height:54px; border-radius:50%;
+    font-size:26px; line-height:1; margin:0 0 18px;
+    background:#f4eee4;
+  }
+  .opp-card:nth-child(1){ background:color-mix(in srgb, var(--pink) 9%, #fff); }
+  .opp-card:nth-child(1) .opp-icon{ background:color-mix(in srgb, var(--pink) 22%, #fff); }
+  .opp-card:nth-child(2){ background:color-mix(in srgb, var(--turq) 9%, #fff); }
+  .opp-card:nth-child(2) .opp-icon{ background:color-mix(in srgb, var(--turq) 22%, #fff); }
+  .opp-card:nth-child(3){ background:color-mix(in srgb, var(--yellow) 11%, #fff); }
+  .opp-card:nth-child(3) .opp-icon{ background:color-mix(in srgb, var(--yellow) 26%, #fff); }
+
   .support-text{ font-size:16px; line-height:1.85; opacity:.7; max-width:66ch; margin:38px 0 0; }
 
   .wrapup-text{ font-size:16px; line-height:1.85; opacity:.78; max-width:64ch; margin:0 0 20px; }
@@ -435,9 +450,9 @@
   <p class="wrapup-text reveal" style="margin:20px 0 24px;">Through this process I learned:</p>
 
   <div class="card-row card-row--three">
-    <div class="info-card reveal"><h4>Teachers need real tips from other teachers, not more resources</h4></div>
-    <div class="info-card reveal"><h4>Teachers need a faster way to see how their students are progressing</h4></div>
-    <div class="info-card reveal"><h4>Teachers need support in the moment, not another dashboard to dig through</h4></div>
+    <div class="info-card opp-card reveal"><span class="opp-icon" aria-hidden="true">&#129309;</span><h4>Teachers need real tips from other teachers, not more resources</h4></div>
+    <div class="info-card opp-card reveal"><span class="opp-icon" aria-hidden="true">&#128200;</span><h4>Teachers need a faster way to see how their students are progressing</h4></div>
+    <div class="info-card opp-card reveal"><span class="opp-icon" aria-hidden="true">&#9889;</span><h4>Teachers need support in the moment, not another dashboard to dig through</h4></div>
   </div>
 
   <div class="overview reveal overview--divider">
