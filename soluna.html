@@ -162,12 +162,13 @@
   .card-row:has(+ .source-note){ margin-bottom:18px; }
   .wrapup-text:has(+ .source-note){ margin-bottom:10px; }
   .wrapup-links{ display:flex; gap:16px; flex-wrap:wrap; margin:36px 0 56px; }
-  .wrapup-row{ display:grid; grid-template-columns:1fr 340px; gap:60px; align-items:start; }
+  .wrapup-row{ display:block; }
   @media (max-width:860px){ .wrapup-row{ grid-template-columns:1fr; } }
-  .wrapup-gallery{ display:flex; flex-direction:column; gap:16px; }
+  .wrapup-gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:clamp(12px,1.6vw,18px); margin:clamp(28px,5vw,44px) 0 clamp(24px,4vw,40px); }
   .wrapup-shot{
-    aspect-ratio:4/3; border-radius:14px; background-size:cover; background-position:center;
-    border:1px solid var(--line); box-shadow:0 10px 28px rgba(33,29,36,.07);
+    display:block; width:100%; height:auto;
+    aspect-ratio:4/3; max-height:clamp(200px,26vw,320px); object-fit:cover;
+    border-radius:14px; background-size:cover; background-position:center; border:1px solid var(--line); box-shadow:0 10px 28px rgba(33,29,36,.07);
   }
   .wrapup-btn{
     display:inline-flex; align-items:center; gap:8px; padding:14px 28px; border-radius:999px;
