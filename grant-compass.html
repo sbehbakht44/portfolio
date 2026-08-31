@@ -153,6 +153,32 @@
   .opp-card:nth-child(5) .opp-icon{ background:color-mix(in srgb, var(--coral) 22%, #fff); }
 
   .support-text{ font-size:16px; line-height:1.85; opacity:.7; max-width:66ch; margin:38px 0 0; }
+  .role-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin:26px 0 8px; }
+  @media (max-width:860px){ .role-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .role-grid{ grid-template-columns:1fr; } }
+  .role-card{
+    display:block; text-decoration:none; color:inherit; text-align:center;
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding:24px 22px 20px;
+    transition:transform .3s cubic-bezier(.22,.68,.16,1), box-shadow .3s ease;
+  }
+  .role-card:hover{ transform:translateY(-4px); box-shadow:0 16px 34px rgba(33,29,36,.10); }
+  .role-head{
+    display:block; width:104px; height:104px; border-radius:50%;
+    margin:0 auto 14px; border:1px solid var(--line);
+  }
+  .role-org{
+    display:block; font-size:16px; font-weight:600; letter-spacing:.01em;
+    color:var(--purple); margin-bottom:5px;
+  }
+  .role-card h4{
+    font-family:var(--font-sans); font-weight:600; font-size:18px;
+    margin:0 0 10px; color:var(--display-color);
+  }
+  .role-card .role-quote{ font-size:16px; line-height:1.6; opacity:.72; font-style:italic; margin:0 0 14px; }
+  .role-more{ font-size:16px; font-weight:500; color:var(--ink); }
+  .role-card:hover .arrow-glyph{ transform:translateX(2px); }
+
   .shift-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:0 32px; margin:22px 0 8px; }
   @media (max-width:760px){ .shift-grid{ grid-template-columns:1fr; } }
   .shift{ display:flex; align-items:baseline; gap:10px; font-size:16px; padding:13px 0; border-bottom:1px solid var(--line); }
@@ -465,6 +491,57 @@
     <span>&middot; Program Specialist</span>
   </blockquote>
 
+  <h3 class="subhead2 reveal">Six roles, one review</h3>
+
+  <p class="support-text reveal" style="margin-top:0;">A single review runs across six roles, three inside the Office of Head Start and three at DLH, and almost nobody in it had a clear picture of the other five. I wrote a one-pager for each: what they are accountable for, what blocks them, and where in the review each frustration actually lands.</p>
+
+  <div class="role-grid">
+    <a class="role-card reveal" href="grant-compass/roles/role-program-specialist.png" target="_blank" rel="noopener">
+      <img class="role-head" src="grant-compass/roles/head-program-specialist.png" width="440" height="440" loading="lazy" decoding="async" alt="Illustrated portrait representing the Program Specialist role">
+      <span class="role-org">Head Start Regional Office</span>
+      <h4>Program Specialist</h4>
+      <p class="role-quote">&ldquo;I am the eyes and ears of the RPM.&rdquo;</p>
+      <span class="role-more">Read the one-pager <span class="arrow-glyph">&rarr;</span></span>
+    </a>
+    <a class="role-card reveal" href="grant-compass/roles/role-regional-program-manager.png" target="_blank" rel="noopener">
+      <img class="role-head" src="grant-compass/roles/head-regional-program-manager.png" width="440" height="440" loading="lazy" decoding="async" alt="Illustrated portrait representing the Regional Program Manager role">
+      <span class="role-org">Head Start Regional Office</span>
+      <h4>Regional Program Manager</h4>
+      <p class="role-quote">&ldquo;I still rely on my old [paper] system.&rdquo;</p>
+      <span class="role-more">Read the one-pager <span class="arrow-glyph">&rarr;</span></span>
+    </a>
+    <a class="role-card reveal" href="grant-compass/roles/role-supervisory-program-specialist.png" target="_blank" rel="noopener">
+      <img class="role-head" src="grant-compass/roles/head-supervisory-program-specialist.png" width="440" height="440" loading="lazy" decoding="async" alt="Illustrated portrait representing the Supervisory Program Specialist role">
+      <span class="role-org">Head Start Regional Office</span>
+      <h4>Supervisory Program Specialist</h4>
+      <p class="role-quote">&ldquo;I&rsquo;m just always confused when it comes to conducting a follow up.&rdquo;</p>
+      <span class="role-more">Read the one-pager <span class="arrow-glyph">&rarr;</span></span>
+    </a>
+    <a class="role-card reveal" href="grant-compass/roles/role-field-operations-manager.png" target="_blank" rel="noopener">
+      <img class="role-head" src="grant-compass/roles/head-field-operations-manager.png" width="440" height="440" loading="lazy" decoding="async" alt="Illustrated portrait representing the Field Operations Manager role">
+      <span class="role-org">DLH</span>
+      <h4>Field Operations Manager</h4>
+      <p class="role-quote">&ldquo;One time we lost 69 files of data entered and the team had to reschedule.&rdquo;</p>
+      <span class="role-more">Read the one-pager <span class="arrow-glyph">&rarr;</span></span>
+    </a>
+    <a class="role-card reveal" href="grant-compass/roles/role-review-lead.png" target="_blank" rel="noopener">
+      <img class="role-head" src="grant-compass/roles/head-review-lead.png" width="440" height="440" loading="lazy" decoding="async" alt="Illustrated portrait representing the Review Lead role">
+      <span class="role-org">DLH</span>
+      <h4>Review Lead</h4>
+      <p class="role-quote">&ldquo;I wish we could all be in [the system] at the same time.&rdquo;</p>
+      <span class="role-more">Read the one-pager <span class="arrow-glyph">&rarr;</span></span>
+    </a>
+    <a class="role-card reveal" href="grant-compass/roles/role-reviewer.png" target="_blank" rel="noopener">
+      <img class="role-head" src="grant-compass/roles/head-reviewer.png" width="440" height="440" loading="lazy" decoding="async" alt="Illustrated portrait representing the Reviewer role">
+      <span class="role-org">DLH Consultants</span>
+      <h4>Reviewer</h4>
+      <p class="role-quote">&ldquo;I&rsquo;ve had data lost and had to go back and do it over again.&rdquo;</p>
+      <span class="role-more">Read the one-pager <span class="arrow-glyph">&rarr;</span></span>
+    </a>
+  </div>
+
+  <p class="support-text reveal">Read across all six and the same problem turns up in three separate roles, described independently and without prompting: work disappearing. That is the thread I pulled on later.</p>
+
   <p class="wrapup-text reveal" style="margin:20px 0 24px;">Through embedding with this community we arrived at several opportunities for the next version of this software:</p>
 
   <div class="card-row card-row--three">
@@ -511,7 +588,7 @@
 
   <p class="support-text reveal">The two exercises disagreed, and the disagreement turned out to be the most useful thing we made. Leadership&rsquo;s biggest bets went to the Personalized Homepage, the most visible and most ambitious of the six. The matrix put the Review Tracker in the strongest position on the board: close to the same impact for a fraction of the effort. Multiplayer Mode, which addressed a frustration we heard in almost every interview, scored lowest on impact of all six.</p>
 
-  <p class="support-text reveal">I argued for starting with Multiplayer Mode, the concept our own matrix had ranked lowest on impact. It was one of the most requested things we heard, and during the shadowings I watched the system kick reviewers out and lose all of their work, more than once. Losing an afternoon of notes does not register as impact on a matrix, but it is exactly what makes people stop trusting a tool and start keeping their real work in a spreadsheet. Our estimate was that fixing it would roughly halve the time spent editing a review.</p>
+  <p class="support-text reveal">I argued for starting with Multiplayer Mode, the concept our own matrix had ranked lowest on impact. Three of the six roles above had told us, independently, that they had lost work in the system, and during the shadowings I watched it happen: the system kicked reviewers out and took their notes with it, more than once. Losing an afternoon of notes does not register as impact on a matrix, but it is exactly what makes people stop trusting a tool and start keeping their real work in a spreadsheet. Our estimate was that fixing it would roughly halve the time spent editing a review.</p>
 
   <p class="support-text reveal">So the room held three different answers: leadership&rsquo;s budget said Personalized Homepage, the matrix said Review Tracker, and I said Multiplayer Mode. We presented all six with the matrix rather than choosing for them, disagreement included. The decision about sequencing belonged to the team who would have to build it, and handing them the tension in the open was more useful than a ranked list that hid it.</p>
 
