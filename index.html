@@ -28,7 +28,9 @@
 
   nav{
     display:flex; justify-content:space-between; align-items:center;
-    padding:32px 64px; border-bottom:1px solid var(--line);
+    padding:clamp(18px,4vw,32px) clamp(20px,6vw,64px);
+    padding-top:max(clamp(18px,4vw,32px), env(safe-area-inset-top));
+    border-bottom:1px solid var(--line);
   }
   nav .logo{ font-family:var(--font-display); font-style:italic; font-size:20px; }
   nav .links{ display:flex; gap:32px; font-size:16px; letter-spacing:.01em; }
@@ -36,7 +38,7 @@
 
   .hero{
     display:flex; flex-direction:column; align-items:center; text-align:center;
-    max-width:920px; margin:0 auto; padding:150px 24px 130px;
+    max-width:920px; margin:0 auto; padding:clamp(72px,18vw,150px) 24px clamp(64px,16vw,130px);
     position:relative;
   }
   .hero, .hero *{
@@ -78,9 +80,9 @@
   }
 
   /* PROJECTS: editorial list, generous whitespace */
-  .projects{ max-width:1080px; margin:0 auto; padding:100px 64px 130px; }
+  .projects{ max-width:1080px; margin:0 auto; padding:clamp(56px,12vw,100px) clamp(20px,6vw,64px) clamp(64px,12vw,130px); }
   .projects-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; border-bottom:1px solid var(--line); padding-bottom:24px; }
-  .projects-head h2{ font-family:var(--font-display); font-weight:500; font-size:32px; margin:0; }
+  .projects-head h2{ font-family:var(--font-display); font-weight:500; font-size:clamp(24px,4.5vw,32px); margin:0; }
   .projects-head span{ font-size:16px; opacity:.55; }
 
   .project-item{
@@ -286,6 +288,68 @@
     opacity:var(--o-faint); text-align:center;
   }
 
+
+  /* ============================================================
+     8. RESPONSIVE FOUNDATION
+     Fluid, intent-based rules layered on the design system above.
+     These interpolate continuously with clamp()/minmax() rather than
+     jumping at fixed breakpoints; a media query is used only where a
+     layout genuinely needs to change shape (grid column count, nav
+     orientation), not to re-declare sizes.
+     ============================================================ */
+
+  /* comfortable touch targets on every text link, without changing
+     how any of them look */
+  nav .links a, .backbar a, .next a, .to-work, .ic-readmore, .link-arrow{
+    padding-block:8px; margin-block:-8px;
+  }
+
+  /* nav: below ~640px the logo and links stack into a deliberate
+     two-row lockup instead of being forced into one cramped row or
+     wrapping unpredictably */
+  @media (max-width:640px){
+    nav{ flex-direction:column; align-items:flex-start; row-gap:10px; }
+    nav .links{ width:100%; gap:22px; }
+  }
+
+  /* hero-image: fluid inset + fluid min-height so a short/narrow
+     mobile viewport never gets a hero that is taller than it needs
+     to be, or an inset that eats most of the width */
+  .hero-image{
+    width:calc(100% - clamp(40px,10vw,200px));
+    margin:clamp(24px,6vw,48px) auto clamp(48px,10vw,96px);
+    min-height:clamp(220px,45vw,420px);
+  }
+
+  /* zigzag/provider/wrapup two-up rows: once they've stacked to one
+     column, the desktop gap between media and text is too much
+     vertical air -- tighten it only in that stacked state */
+  @media (max-width:860px){
+    .zigzag-row, .zigzag-row.z-reverse,
+    .provider-photo-row, .wrapup-row{ gap:32px; }
+  }
+
+  /* card grids: an extra step below the existing 2-column breakpoint
+     so small phones never get a cramped 2-up grid */
+  @media (max-width:480px){
+    .card-row, .card-row--three{ grid-template-columns:1fr; }
+  }
+
+  /* project-item (homepage list): the desktop layout is a fixed
+     200px/56px/1fr/auto grid that cannot fit a phone screen. Below
+     600px it becomes a 2-column grid -- thumbnail spanning two rows,
+     index number and arrow sharing the top row, title/description
+     below -- so every piece of content stays visible, just
+     rearranged. */
+  @media (max-width:600px){
+    .project-item{
+      grid-template-columns:96px 1fr; column-gap:16px; row-gap:6px; padding:22px 0;
+    }
+    .project-item .thumb{ width:96px; height:72px; grid-column:1; grid-row:1 / 3; }
+    .project-item .idx{ grid-column:2; grid-row:1; align-self:end; }
+    .project-item > div{ grid-column:2; grid-row:2; }
+    .project-item .arrow{ grid-column:2; grid-row:1; justify-self:end; }
+  }
 </style>
 </head>
 <body>

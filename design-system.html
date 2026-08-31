@@ -25,9 +25,9 @@
     margin:0; background:var(--bg); color:var(--display-color);
     font-family:var(--font-sans); font-weight:300; font-size:16px; line-height:1.6;
   }
-  .wrap{ max-width:980px; margin:0 auto; padding:64px 40px 96px; }
+  .wrap{ max-width:980px; margin:0 auto; padding:clamp(32px,8vw,64px) clamp(20px,6vw,40px) clamp(48px,10vw,96px); }
 
-  h1{ font-family:var(--font-display); color:var(--display-color); font-size:46px; line-height:1.1; margin:0 0 10px; }
+  h1{ font-family:var(--font-display); color:var(--display-color); font-size:clamp(30px,7vw,46px); line-height:1.15; margin:0 0 10px; }
   .lede{ font-family:var(--font-sans); font-weight:300; font-style:italic; font-size:20px; opacity:.75; margin:0 0 8px; }
   .meta{ font-size:16px; opacity:var(--o-faint); margin:0 0 56px; }
 
@@ -94,7 +94,8 @@
     transition:transform .2s var(--ease); }
   .btn-row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
 
-  .arrow-tbl{ width:100%; border-collapse:collapse; font-size:16px; }
+  .arrow-tbl-wrap{ width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .arrow-tbl{ width:100%; min-width:360px; border-collapse:collapse; font-size:16px; }
   .arrow-tbl th, .arrow-tbl td{ text-align:left; padding:11px 12px; border-bottom:1px solid var(--line); }
   .arrow-tbl th{ font-size:16px; font-weight:600; opacity:var(--o-muted); }
   .arrow-tbl td:first-child{ font-size:20px; width:58px; }
@@ -241,12 +242,12 @@
     <h2>Arrows</h2>
     <p>Three glyphs, always in Work Sans, always at the size of the text they sit beside. No SVG arrow one place and a character another.</p>
     <div class="card">
-      <table class="arrow-tbl">
+      <div class="arrow-tbl-wrap"><table class="arrow-tbl">
         <tr><th></th><th>Glyph</th><th>Means</th><th>Used for</th></tr>
         <tr><td>→</td><td><code>U+2192</code></td><td>Forward</td><td>Next project, outbound links, project list rows</td></tr>
         <tr><td>←</td><td><code>U+2190</code></td><td>Back</td><td>Back to home, all work</td></tr>
         <tr><td>↓</td><td><code>U+2193</code></td><td>Down</td><td>Downloads, scroll cue</td></tr>
-      </table>
+      </table></div>
       <p class="spec">Forward arrows sit <b>after</b> the label; back and download arrows sit <b>before</b> it. Arrows nudge 2px in their own direction on hover.</p>
     </div>
   </div>

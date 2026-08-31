@@ -27,14 +27,16 @@
 
   nav{
     display:flex; justify-content:space-between; align-items:center;
-    padding:32px 64px; border-bottom:1px solid var(--line);
+    padding:clamp(18px,4vw,32px) clamp(20px,6vw,64px);
+    padding-top:max(clamp(18px,4vw,32px), env(safe-area-inset-top));
+    border-bottom:1px solid var(--line);
   }
   nav .logo{ font-family:var(--font-display); font-style:italic; font-size:20px; text-decoration:none; color:var(--ink); }
   nav .links{ display:flex; gap:32px; font-size:16px; letter-spacing:.01em; }
   nav .links a{ color:var(--ink); text-decoration:none; opacity:.6; }
   nav .links a.is-active{ opacity:1; border-bottom:2px solid var(--coral); padding-bottom:3px; }
 
-  .backbar{ max-width:1040px; margin:0 auto; padding:28px 64px 0; }
+  .backbar{ max-width:1040px; margin:0 auto; padding:clamp(16px,3vw,28px) clamp(20px,6vw,64px) 0; }
   .backbar a{
     font-size:16px; font-weight:600; letter-spacing:.01em;
     color:var(--ink); opacity:.55; text-decoration:none;
@@ -47,13 +49,13 @@
     .reveal{ transition:none !important; opacity:1 !important; transform:none !important; }
   }
 
-  .res-shell{ max-width:840px; margin:0 auto; padding:36px 64px 110px; text-align:left; }
+  .res-shell{ max-width:840px; margin:0 auto; padding:clamp(24px,5vw,36px) clamp(20px,6vw,64px) clamp(60px,12vw,110px); text-align:left; }
   .res-eyebrow{
     font-size:16px; letter-spacing:.01em; color:var(--coral);
     font-weight:600; margin:0 0 16px; display:block;
   }
   .res-title{
-    font-family:var(--font-display); font-weight:500; font-size:46px; line-height:1.15; margin:0 0 16px;
+    font-family:var(--font-display); font-weight:500; font-size:clamp(30px,7vw,46px); line-height:1.2; margin:0 0 16px;
   }
   .res-warmline{ font-family:var(--font-display); font-style:italic; font-size:20px; opacity:.75; margin:0 0 22px; }
   .res-prose p{ font-size:16px; line-height:1.75; opacity:.78; margin:0 0 36px; max-width:52ch; }
@@ -251,6 +253,68 @@
     opacity:var(--o-faint); text-align:center;
   }
 
+
+  /* ============================================================
+     8. RESPONSIVE FOUNDATION
+     Fluid, intent-based rules layered on the design system above.
+     These interpolate continuously with clamp()/minmax() rather than
+     jumping at fixed breakpoints; a media query is used only where a
+     layout genuinely needs to change shape (grid column count, nav
+     orientation), not to re-declare sizes.
+     ============================================================ */
+
+  /* comfortable touch targets on every text link, without changing
+     how any of them look */
+  nav .links a, .backbar a, .next a, .to-work, .ic-readmore, .link-arrow{
+    padding-block:8px; margin-block:-8px;
+  }
+
+  /* nav: below ~640px the logo and links stack into a deliberate
+     two-row lockup instead of being forced into one cramped row or
+     wrapping unpredictably */
+  @media (max-width:640px){
+    nav{ flex-direction:column; align-items:flex-start; row-gap:10px; }
+    nav .links{ width:100%; gap:22px; }
+  }
+
+  /* hero-image: fluid inset + fluid min-height so a short/narrow
+     mobile viewport never gets a hero that is taller than it needs
+     to be, or an inset that eats most of the width */
+  .hero-image{
+    width:calc(100% - clamp(40px,10vw,200px));
+    margin:clamp(24px,6vw,48px) auto clamp(48px,10vw,96px);
+    min-height:clamp(220px,45vw,420px);
+  }
+
+  /* zigzag/provider/wrapup two-up rows: once they've stacked to one
+     column, the desktop gap between media and text is too much
+     vertical air -- tighten it only in that stacked state */
+  @media (max-width:860px){
+    .zigzag-row, .zigzag-row.z-reverse,
+    .provider-photo-row, .wrapup-row{ gap:32px; }
+  }
+
+  /* card grids: an extra step below the existing 2-column breakpoint
+     so small phones never get a cramped 2-up grid */
+  @media (max-width:480px){
+    .card-row, .card-row--three{ grid-template-columns:1fr; }
+  }
+
+  /* project-item (homepage list): the desktop layout is a fixed
+     200px/56px/1fr/auto grid that cannot fit a phone screen. Below
+     600px it becomes a 2-column grid -- thumbnail spanning two rows,
+     index number and arrow sharing the top row, title/description
+     below -- so every piece of content stays visible, just
+     rearranged. */
+  @media (max-width:600px){
+    .project-item{
+      grid-template-columns:96px 1fr; column-gap:16px; row-gap:6px; padding:22px 0;
+    }
+    .project-item .thumb{ width:96px; height:72px; grid-column:1; grid-row:1 / 3; }
+    .project-item .idx{ grid-column:2; grid-row:1; align-self:end; }
+    .project-item > div{ grid-column:2; grid-row:2; }
+    .project-item .arrow{ grid-column:2; grid-row:1; justify-self:end; }
+  }
 </style>
 </head>
 <body>
