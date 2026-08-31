@@ -153,6 +153,15 @@
   .opp-card:nth-child(5) .opp-icon{ background:color-mix(in srgb, var(--coral) 22%, #fff); }
 
   .support-text{ font-size:16px; line-height:1.85; opacity:.7; max-width:66ch; margin:38px 0 0; }
+  .research-list{ list-style:none; margin:22px 0 0; padding:0; max-width:66ch; }
+  .research-list li{
+    font-size:16px; line-height:1.75; opacity:.78;
+    margin:0 0 10px; padding-left:20px; position:relative;
+  }
+  .research-list li:last-child{ margin-bottom:0; }
+  .research-list li::before{ content:'\2022'; position:absolute; left:2px; color:var(--purple); opacity:1; }
+  .research-list li strong{ opacity:1; color:var(--display-color); font-weight:600; }
+
   .role-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin:26px 0 8px; }
   @media (max-width:860px){ .role-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:560px){ .role-grid{ grid-template-columns:1fr; } }
@@ -476,12 +485,12 @@
     <p>Over the course of seven weeks, from kickoff to final delivery, I did observation, interviewing, synthesis, concept generation, and rebranding, working with the Head Start grant reviewers, leadership, and my IDEO team to deliver prototypes the team could use to test in the next phase.</p>
   </div>
 
-  <div class="card-row">
-    <div class="info-card reveal"><div class="ic-value">17</div><div class="ic-label">Interviews across reviewers, review leads, field operations managers, program specialists &amp; regional program managers</div></div>
-    <div class="info-card reveal"><div class="ic-value">3</div><div class="ic-label">Reviews shadowed in the field, at the Fond du Lac Reservation, Kaysville, Utah, and Duluth, Minnesota</div></div>
-    <div class="info-card reveal"><div class="ic-value">6</div><div class="ic-label">Role one-pagers mapping who does what across the Office of Head Start and DLH</div></div>
-    <div class="info-card reveal"><div class="ic-value">2</div><div class="ic-label">End-to-end journey maps of the FA1 and FA2 review process</div></div>
-  </div>
+  <ul class="research-list reveal">
+    <li><strong>17 interviews</strong> across reviewers, review leads, field operations managers, program specialists, and regional program managers.</li>
+    <li><strong>3 reviews shadowed</strong> in the field, at the Fond du Lac Reservation, Kaysville, Utah, and Duluth, Minnesota.</li>
+    <li><strong>6 role one-pagers</strong> mapping who does what across the Office of Head Start and DLH.</li>
+    <li><strong>2 end-to-end journey maps</strong> of the FA1 and FA2 review process.</li>
+  </ul>
 
   <h3 class="subhead2 reveal">Working with the Head Start Community</h3>
 
@@ -563,17 +572,6 @@
     <div class="shift"><span class="from">Individual</span><span class="arrow">&rarr;</span><span class="to">Collaborative</span></div>
     <div class="shift"><span class="from">Doubtful</span><span class="arrow">&rarr;</span><span class="to">Reliable</span></div>
     <div class="shift"><span class="from">Cumbersome</span><span class="arrow">&rarr;</span><span class="to">Joyful</span></div>
-  </div>
-
-  <h3 class="subhead2 reveal">Four design principles</h3>
-
-  <p class="support-text reveal" style="margin-top:0;">Before designing anything, we wrote the criteria we would judge the concepts against, so the team could keep making decisions after we left.</p>
-
-  <div class="card-row">
-    <div class="info-card reveal"><div class="ic-value">01</div><h4>Design with collaboration in mind</h4><p>Close the loop between users and actions taken.</p></div>
-    <div class="info-card reveal"><div class="ic-value">02</div><h4>Keep it simple</h4><p>Less clicks, more visual cues.</p></div>
-    <div class="info-card reveal"><div class="ic-value">03</div><h4>Personalize and customize</h4><p>Surface relevant information at the right resolution.</p></div>
-    <div class="info-card reveal"><div class="ic-value">04</div><h4>Automate for efficiency</h4><p>Let the software provide assistance and proactive guidance.</p></div>
   </div>
 
   <div class="overview reveal overview--divider">
