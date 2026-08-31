@@ -162,6 +162,10 @@
   .research-list li::before{ content:'\2022'; position:absolute; left:2px; color:var(--purple); opacity:1; }
   .research-list li strong{ opacity:1; color:var(--display-color); font-weight:600; }
 
+  .journey-map-group{ display:flex; flex-direction:column; gap:20px; margin:26px 0 34px; }
+  .journey-map{ margin:0; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff; box-shadow:0 10px 28px rgba(33,29,36,.07); }
+  .journey-map img{ display:block; width:100%; height:auto; }
+  .journey-map figcaption{ padding:14px 20px; font-size:16px; opacity:.6; border-top:1px solid var(--line); }
   .role-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin:26px 0 8px; }
   @media (max-width:860px){ .role-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:560px){ .role-grid{ grid-template-columns:1fr; } }
@@ -499,6 +503,21 @@
   <blockquote class="reveal">&ldquo;I use my own Excel spreadsheet to know when things are going to happen. We don&rsquo;t have any one place to see it all.&rdquo;
     <span>&middot; Program Specialist</span>
   </blockquote>
+
+  <h3 class="subhead2 reveal">Two journeys, mapped end to end</h3>
+
+  <p class="support-text reveal" style="margin-top:0;">Focus Area reviews come in two shapes: a virtual review conducted over two and a half days, and a five-day on-site review. I mapped both end to end across every role, so the team could see the handoffs and gaps that no single interview surfaced on its own.</p>
+
+  <div class="journey-map-group reveal">
+    <figure class="journey-map">
+      <img src="grant-compass/journey-map-fa1.png" width="2386" height="876" loading="lazy" decoding="async" alt="Focus Area 1 (FA1) review journey map: a virtual monitoring review conducted over two and a half days, mapped across Office of Head Start, DLH, and Grant Recipient swimlanes through scheduling, preparing, monitoring, reporting, and follow-up.">
+      <figcaption>Focus Area 1 (FA1) &middot; virtual review, ~2.5 days</figcaption>
+    </figure>
+    <figure class="journey-map">
+      <img src="grant-compass/journey-map-fa2.png" width="2464" height="876" loading="lazy" decoding="async" alt="Focus Area 2 (FA2) review journey map: an on-site monitoring review conducted over five days, mapped across the same three swimlanes through scheduling, preparing, monitoring, reporting, and follow-up.">
+      <figcaption>Focus Area 2 (FA2) &middot; on-site review, 5 days</figcaption>
+    </figure>
+  </div>
 
   <h3 class="subhead2 reveal">Six roles, one review</h3>
 
