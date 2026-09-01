@@ -8,6 +8,12 @@
 <meta property="og:title" content="Grant Compass · Sara Behbakht">
 <meta property="og:description" content="Case study: Grant Compass, reimagining Head Start grant review as a connected ecosystem of work, made with DLH Corp.">
 <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sarabehbakht.com/grant-compass.html">
+  <meta property="og:image" content="https://sarabehbakht.com/og/grant-compass.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://sarabehbakht.com/grant-compass.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='12' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(-16 16 12)'/%3E%3Cellipse cx='20.5' cy='12.5' rx='5.5' ry='4' fill='%23fdf6ec' fill-opacity='0.9' stroke='%23211d24' stroke-width='0.5' transform='rotate(16 20.5 12.5)'/%3E%3CclipPath id='bc'%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5'/%3E%3C/clipPath%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='%23f6c445'/%3E%3Cg clip-path='url(%23bc)'%3E%3Crect x='14' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3Crect x='19.5' y='11' width='2.4' height='14' fill='%23211d24'/%3E%3C/g%3E%3Cellipse cx='17' cy='18' rx='8.5' ry='6.5' fill='none' stroke='%23211d24' stroke-width='1.1'/%3E%3Ccircle cx='8.3' cy='16.3' r='2.1' fill='%23211d24'/%3E%3Cpath d='M7.2 14.4 L5.8 12.5 M9.2 14.6 L9.4 12.3' stroke='%23211d24' stroke-width='0.9' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='5.8' cy='12.3' r='0.7' fill='%23211d24'/%3E%3Ccircle cx='9.4' cy='12.1' r='0.7' fill='%23211d24'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Bagel+Fat+One&family=Work+Sans:wght@300;500;600&display=swap" rel="stylesheet">
@@ -86,6 +92,50 @@
     font-family:var(--font-display); font-style:italic; font-size:clamp(20px,5vw,28px); line-height:1.5; color:var(--ink); max-width:36ch;
   }
   blockquote span{ display:block; margin-top:14px; font-family:var(--font-sans); font-style:normal; font-size:16px; opacity:.55; }
+
+  /* ------------------------------------------------------------
+     Quote treatments
+     A 36ch blockquote sitting in a 1040px column leaves half the
+     row empty, which reads as an accident rather than a choice.
+     .quote-duo sets two real quotes side by side and collapses to
+     one column on small screens; blockquote.wide gives a single
+     quote a band that uses the full column while keeping the text
+     at a comfortable measure.
+     ------------------------------------------------------------ */
+
+  .quote-duo{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));
+    gap:clamp(16px,2.2vw,28px);
+    margin:clamp(28px,5vw,44px) 0 clamp(40px,7vw,64px);
+    align-items:stretch;
+  }
+  .quote-duo blockquote{
+    margin:0; max-width:none; height:100%;
+    padding:clamp(20px,2.2vw,26px) clamp(20px,2.4vw,28px);
+    border-radius:0 14px 14px 0;
+    background:#f5f1fc;
+    font-size:clamp(18px,1.9vw,21px); line-height:1.45;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .quote-duo blockquote:nth-child(2){ border-left-color:var(--coral); background:#fdf2ee; }
+  .quote-duo blockquote p{
+    margin:0; font:inherit; color:inherit; max-width:none;
+  }
+  .quote-duo blockquote span{ margin-top:16px; }
+
+  blockquote.wide{
+    max-width:none;
+    padding:clamp(24px,2.8vw,34px) clamp(24px,3.4vw,44px);
+    border-radius:0 16px 16px 0;
+    background:#f5f1fc;
+    margin-bottom:clamp(40px,7vw,64px);
+  }
+  blockquote.wide p{
+    margin:0; font:inherit; color:inherit; max-width:38ch;
+  }
+  blockquote.hmw.wide{ max-width:none; margin:38px 0 clamp(36px,6vw,56px); }
+  blockquote.hmw.wide p{ max-width:46ch; }
 
   .gallery-cap{ font-size:16px; opacity:.5; margin:0 0 90px; text-align:center; }
 
@@ -437,7 +487,8 @@
 
   /* comfortable touch targets on every text link, without changing
      how any of them look */
-  nav .links a, .backbar a, .next a, .to-work, .ic-readmore, .link-arrow{
+  nav .links a, .backbar a, .next a, .to-work, .ic-readmore, .link-arrow,
+  .source-note a{
     padding-block:8px; margin-block:-8px;
   }
 
@@ -561,9 +612,10 @@
 
   <p class="support-text reveal">The first step was shadowing the Head Start review process at grant recipient sites: the Fond du Lac Reservation, Kaysville, Utah, and Duluth, Minnesota. I spoke with preschool educators, Head Start parents, and reviewers, and got to look over their shoulders as they used the software.</p>
 
-  <blockquote class="reveal">&ldquo;I use my own Excel spreadsheet to know when things are going to happen. We don&rsquo;t have any one place to see it all.&rdquo;
-    <span>&middot; Program Specialist</span>
-  </blockquote>
+  <div class="quote-duo">
+    <blockquote class="reveal"><p>&ldquo;I use my own Excel spreadsheet to know when things are going to happen. We don&rsquo;t have any one place to see it all.&rdquo;</p><span>&middot; Program Specialist</span></blockquote>
+    <blockquote class="reveal"><p>&ldquo;One time we lost 69 files of data entered and the team had to reschedule.&rdquo;</p><span>&middot; Field Operations Manager</span></blockquote>
+  </div>
 
   <h3 class="subhead2 reveal">Two journeys, mapped end to end</h3>
 
