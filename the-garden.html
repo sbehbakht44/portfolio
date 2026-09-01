@@ -457,13 +457,34 @@
     .project-item > div{ grid-column:2; grid-row:2; }
     .project-item .arrow{ grid-column:2; grid-row:1; justify-self:end; }
   }
+
+  /* ---------- the turn: the moment the problem changed ---------- */
+  .turn{
+    margin:clamp(46px,8vw,84px) 0 clamp(40px,7vw,74px);
+  }
+  .turn .turn-label{
+    display:block; font-family:var(--font-hand); font-size:clamp(19px,2vw,22px);
+    color:var(--coral); opacity:.9; margin-bottom:10px;
+  }
+  .turn p{
+    font-family:var(--font-display); font-weight:500;
+    font-size:clamp(23px,3.1vw,35px); line-height:1.26; letter-spacing:-.005em;
+    color:var(--display-color); margin:0; max-width:min(100%, 19em);
+  }
+
+  nav .links .nav-hello{ opacity:1; color:var(--display-color); font-weight:600; }
+  nav .links .nav-hello::after{
+    content:""; display:block; height:2px; margin-top:3px;
+    background:var(--pink); opacity:.55; transition:opacity .2s var(--ease);
+  }
+  nav .links .nav-hello:hover::after{ opacity:1; }
 </style>
 </head>
 <body>
 
 <nav>
   <a class="logo" href="index.html">Sara Behbakht</a>
-  <div class="links"><a href="index.html#work">Work</a><a href="about.html">About</a><a href="resume.html">Resume</a></div>
+  <div class="links"><a href="index.html#work">Work</a><a href="about.html">About</a><a href="resume.html">Resume</a><a class="nav-hello" href="mailto:sbehbakht@ideo.com">Say hello</a></div>
 </nav>
 
 <div class="backbar">
@@ -560,6 +581,11 @@
   <p class="support-text reveal">And while many women described their in-clinic care as warm, thoughtful, and high quality, we kept hearing that the hardest moments happened in the transitions, where systems broke down, referrals disappeared, women had to explain themselves all over again, or support simply stopped once they left the building.</p>
 
   <p class="support-text reveal">To map that gap, we developed six end-to-end journeys that made visible both the strengths and the seams in the current system: establishing care, pregnancy, postpartum, perimenopause, breast cancer, and older adulthood. These journeys helped us distinguish table-stakes fixes from more transformational opportunities. The biggest needs weren&rsquo;t tied to one condition; they repeated across life stages: clearer guidance, better handoffs, more continuity, and more holistic support. You can see one of these journeys mapped in full, phase by phase from awareness through outcome, linked under each woman&rsquo;s story above.</p>
+
+    <div class="turn reveal">
+    <span class="turn-label">where it turned</span>
+    <p>The care itself was good. It was the space between the care that kept failing them.</p>
+  </div>
 
   <div class="overview reveal overview--divider">
     <h2>The Solution</h2>

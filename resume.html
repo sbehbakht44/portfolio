@@ -315,13 +315,20 @@
     .project-item > div{ grid-column:2; grid-row:2; }
     .project-item .arrow{ grid-column:2; grid-row:1; justify-self:end; }
   }
+
+  nav .links .nav-hello{ opacity:1; color:var(--display-color); font-weight:600; }
+  nav .links .nav-hello::after{
+    content:""; display:block; height:2px; margin-top:3px;
+    background:var(--pink); opacity:.55; transition:opacity .2s var(--ease);
+  }
+  nav .links .nav-hello:hover::after{ opacity:1; }
 </style>
 </head>
 <body>
 
 <nav>
   <a class="logo" href="index.html">Sara Behbakht</a>
-  <div class="links"><a href="index.html#work">Work</a><a href="about.html">About</a><a href="resume.html" class="is-active">Resume</a></div>
+  <div class="links"><a href="index.html#work">Work</a><a href="about.html">About</a><a href="resume.html" class="is-active">Resume</a><a class="nav-hello" href="mailto:sbehbakht@ideo.com">Say hello</a></div>
 </nav>
 
 <div class="backbar">

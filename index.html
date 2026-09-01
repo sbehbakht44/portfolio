@@ -432,13 +432,20 @@
     .pcard:hover .pcard-media{ transform:none; }
     .hero-standfirst{ opacity:.72; }
   }
+
+  nav .links .nav-hello{ opacity:1; color:var(--display-color); font-weight:600; }
+  nav .links .nav-hello::after{
+    content:""; display:block; height:2px; margin-top:3px;
+    background:var(--pink); opacity:.55; transition:opacity .2s var(--ease);
+  }
+  nav .links .nav-hello:hover::after{ opacity:1; }
 </style>
 </head>
 <body>
 
 <nav>
   <div class="logo">Sara Behbakht</div>
-  <div class="links"><a href="#work">Work</a><a href="about.html">About</a><a href="resume.html">Resume</a></div>
+  <div class="links"><a href="#work">Work</a><a href="about.html">About</a><a href="resume.html">Resume</a><a class="nav-hello" href="mailto:sbehbakht@ideo.com">Say hello</a></div>
 </nav>
 
 <section class="hero">
